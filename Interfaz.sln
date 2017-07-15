@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaz", "Interfaz\Interfaz.csproj", "{5C86DB26-7D56-434A-AE18-C80FDC2FD047}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{36263997-A369-4F84-B387-D4BD19A6E654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{81ABBCB1-7DBE-4418-91D7-AF56733BC80F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C86DB26-7D56-434A-AE18-C80FDC2FD047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C86DB26-7D56-434A-AE18-C80FDC2FD047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C86DB26-7D56-434A-AE18-C80FDC2FD047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C86DB26-7D56-434A-AE18-C80FDC2FD047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36263997-A369-4F84-B387-D4BD19A6E654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36263997-A369-4F84-B387-D4BD19A6E654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36263997-A369-4F84-B387-D4BD19A6E654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36263997-A369-4F84-B387-D4BD19A6E654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81ABBCB1-7DBE-4418-91D7-AF56733BC80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81ABBCB1-7DBE-4418-91D7-AF56733BC80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81ABBCB1-7DBE-4418-91D7-AF56733BC80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81ABBCB1-7DBE-4418-91D7-AF56733BC80F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
