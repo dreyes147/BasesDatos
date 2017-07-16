@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81ABBCB1-7DBE-4418-91D7-AF56733BC80F}</ProjectGuid>
+    <ProjectGuid>{DE61BAC4-050E-478D-8C1C-C0DF242EF109}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Datos</RootNamespace>
-    <AssemblyName>Datos</AssemblyName>
+    <RootNamespace>Funciones</RootNamespace>
+    <AssemblyName>Funciones</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,44 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\AreaTrabajo.cs" />
-    <Compile Include="Clases\AsientoSalaCine.cs" />
-    <Compile Include="Clases\Cartelera.cs" />
-    <Compile Include="Clases\CarteleraDetalle.cs" />
-    <Compile Include="Clases\Cliente.cs" />
-    <Compile Include="Clases\DetalleReservacion.cs" />
-    <Compile Include="Clases\Estado.cs" />
-    <Compile Include="Clases\EstadoAsiento.cs" />
-    <Compile Include="Clases\EstadoReservacion.cs" />
-    <Compile Include="Clases\EstadoSala.cs" />
-    <Compile Include="Clases\Genero.cs" />
-    <Compile Include="Clases\Idioma.cs" />
-    <Compile Include="Clases\Pelicula.cs" />
-    <Compile Include="Clases\Persona.cs" />
-    <Compile Include="Clases\PersonaExtranjera.cs" />
-    <Compile Include="Clases\PersonalAdministrativo.cs" />
-    <Compile Include="Clases\PersonaNacional.cs" />
-    <Compile Include="Clases\Promocion.cs" />
-    <Compile Include="Clases\Reservacion.cs" />
-    <Compile Include="Clases\SalaCine.cs" />
-    <Compile Include="Clases\Subtitulo.cs" />
-    <Compile Include="Clases\TipoAsiento.cs" />
-    <Compile Include="Clases\TipoCliente.cs" />
-    <Compile Include="Clases\TipoPago.cs" />
-    <Compile Include="Clases\TipoPersona.cs" />
-    <Compile Include="Clases\TipoPromocion.cs" />
-    <Compile Include="Clases\TipoProyeccion.cs" />
-    <Compile Include="Clases\TipoSala.cs" />
-    <Compile Include="Clases\TipoUsuario.cs" />
-    <Compile Include="Clases\UsuarioSistema.cs" />
-    <Compile Include="Conexion\Class1.cs" />
+    <Compile Include="Filtros\Filtro.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Comunes\Comunes.csproj">
-      <Project>{ec16360e-a919-4409-91f2-5482ddba53fc}</Project>
-      <Name>Comunes</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

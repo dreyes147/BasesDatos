@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Datos.Clases
+namespace Negocio.Clases
 {
-    class TipoPromocion
+    public class TipoPromocion
     {
     }
 }

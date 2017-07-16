@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Comunes.Filtros
+namespace Funciones.Filtros
 {
     public class Filtro
     {
         #region Declaración de Variables
         private string vNombreCampo = string.Empty;
         private string vOperador = string.Empty;
-        private object vValor = new object();
+        private object vValor;
         private string vTipoDato = string.Empty;
         #endregion
 

@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Comunes.Filtros;
 
 namespace Datos.Clases
 {
@@ -13,6 +14,7 @@ namespace Datos.Clases
         public DataTable Selecccionar() {
             DataTable dtResultado = new DataTable("Datos");
             string vSQL = string.Empty;
+           
             try
             {
                 vSQL += "Select IdArea,";
