@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Estructuras\AreaTrabajo.cs" />
+    <Compile Include="Filtros\Campos.cs" />
     <Compile Include="Filtros\Filtro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

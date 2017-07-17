@@ -70,6 +70,23 @@ namespace Datos.Conexion
 
 
 
+        public DataTable Ejecutar(string pInstruccion, string pNombreBaseDatos)
+        {
+            DataTable dtResultado = new DataTable();
+            try
+            {
+                AbrirConexion(pNombreBaseDatos);
+                vcmd = new SqlCommand(pInstruccion, vConnection);
+                vcmd.ExecuteNonQuery();
+                CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            return dtResultado;
+        }
+
 
     }
 }
