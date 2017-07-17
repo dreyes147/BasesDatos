@@ -118,25 +118,23 @@ namespace Datos.Clases
                         vQuery += ", ";
                     }
 
-                    if (vCampo.TipoDato.ToUpper() == "DEC" || (vCampo.TipoDato.ToUpper() == "INT"){
+                    if (vCampo.TipoDato.ToUpper() == "DEC" || vCampo.TipoDato.ToUpper() == "INT")
+                     {
                         vQuery += vCampo.Campo + " = " + vCampo.Valor;
                     }
                     else if(vCampo.TipoDato.ToUpper() == "DATE")
                     {
-
+                        vQuery += vCampo.Campo + " =  '" + String.Format("yyyyMMdd" ,Convert.ToDateTime(vCampo.Valor))+"'";
 
                     }
-
+                    else
+                    {
+                        vQuery += vCampo.Campo + " = '" + vCampo.Valor+"'";
+                    }
                 }
-                vSQL += "UPDATE dbo.AREA_TRABAJO SET DescripcionArea = '" + pDatos.DescripcionArea + "' ";
-                if (pFiltros == null)
-                {
-                    vSQL += "WHERE  IdAreaTrabajo = " + pDatos.IdAreaTrabajo;
-                }
-                else
-                {
-                    vSQL += vFiltros.CrearWhere(pFiltros);
-                }
+                vSQL += "UPDATE dbo.AREA_TRABAJO " + vQuery;
+                vSQL += vFiltros.CrearWhere(pFiltros);
+                
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
