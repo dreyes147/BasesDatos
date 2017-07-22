@@ -41,6 +41,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Estructuras\AreaTrabajo.cs" />
+    <Compile Include="Estructuras\arteleraDetalle.cs" />
+    <Compile Include="Estructuras\AsientoSalaCine.cs" />
+    <Compile Include="Estructuras\Cartelera.cs" />
+    <Compile Include="Estructuras\Cliente.cs" />
+    <Compile Include="Estructuras\DetalleReservacion.cs" />
+    <Compile Include="Estructuras\Estado.cs" />
+    <Compile Include="Estructuras\EstadoAsiento.cs" />
+    <Compile Include="Estructuras\EstadoReservacion.cs" />
+    <Compile Include="Estructuras\EstadoSala.cs" />
+    <Compile Include="Estructuras\Genero.cs" />
+    <Compile Include="Estructuras\Idioma.cs" />
+    <Compile Include="Estructuras\Pelicula.cs" />
+    <Compile Include="Estructuras\Persona.cs" />
+    <Compile Include="Estructuras\PersonaExtranjera.cs" />
+    <Compile Include="Estructuras\PersonalAdministrativo.cs" />
+    <Compile Include="Estructuras\PersonaNacional.cs" />
+    <Compile Include="Estructuras\Promocion.cs" />
+    <Compile Include="Estructuras\Reservacion.cs" />
+    <Compile Include="Estructuras\SalaCine.cs" />
+    <Compile Include="Estructuras\Subtitulo.cs" />
+    <Compile Include="Estructuras\TipoAsiento.cs" />
+    <Compile Include="Estructuras\TipoCliente.cs" />
+    <Compile Include="Estructuras\TipoPago.cs" />
+    <Compile Include="Estructuras\TipoPersona.cs" />
+    <Compile Include="Estructuras\TipoPromocion.cs" />
+    <Compile Include="Estructuras\TipoProyeccion.cs" />
+    <Compile Include="Estructuras\TipoSala.cs" />
+    <Compile Include="Estructuras\TipoUsuario.cs" />
+    <Compile Include="Estructuras\UsuarioSistema.cs" />
     <Compile Include="Filtros\Campos.cs" />
     <Compile Include="Filtros\Filtro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
