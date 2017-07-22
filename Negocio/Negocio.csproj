@@ -85,6 +85,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Comunes\Comunes.csproj">
+      <Project>{ec16360e-a919-4409-91f2-5482ddba53fc}</Project>
+      <Name>Comunes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{81abbcb1-7dbe-4418-91d7-af56733bc80f}</Project>
       <Name>Datos</Name>

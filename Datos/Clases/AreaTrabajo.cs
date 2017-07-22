@@ -11,6 +11,10 @@ namespace Datos.Clases
 {
     public class AreaTrabajo
     {
+
+        public AreaTrabajo() {
+
+        }
         #region Declaracion de Seleccionar
         public DataTable Selecccionar(List<Filtro> pFiltros) {
             DataTable dtResultado = new DataTable("Datos");
@@ -76,7 +80,7 @@ namespace Datos.Clases
 
 
         #region Declaracion de Actualizar
-        public void Actualizar(Comunes.Estructuras.AreaTrabajo pDatos, List<Filtro> pFiltro = null)
+        public void Actualizar(Comunes.Estructuras.AreaTrabajo pDatos, List<Filtro> pFiltro)
         {
             string vSQL = string.Empty;
             Filtro vFiltros = new Filtro();
@@ -84,15 +88,11 @@ namespace Datos.Clases
             try
             {
                 vSQL += "UPDATE dbo.AREA_TRABAJO SET DescripcionArea = '" + pDatos.DescripcionArea + "' ";
-                if (pFiltro == null)
-                {
-                    vSQL += "WHERE  IdAreaTrabajo = " + pDatos.IdAreaTrabajo;
-                }
-                else
+                if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);
-                }
-                vConnexion.Ejecutar(vSQL, "BASEDATOS");
+                    vConnexion.Ejecutar(vSQL, "BASEDATOS");
+                }    
             }
             catch (Exception ex)
             {
@@ -119,7 +119,7 @@ namespace Datos.Clases
                     }
 
                     if (vCampo.TipoDato.ToUpper() == "DEC" || vCampo.TipoDato.ToUpper() == "INT")
-                     {
+                    {
                         vQuery += vCampo.Campo + " = " + vCampo.Valor;
                     }
                     else if(vCampo.TipoDato.ToUpper() == "DATE")
