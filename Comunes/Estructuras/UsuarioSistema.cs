@@ -9,11 +9,13 @@ namespace Comunes.Estructuras
     public class UsuarioSistema
     {
 
+
         #region Declaracion de atributos
 
         private int vIdPersona;
         private int vIdTipoPersona;
         private int vIdTipoUsuario;
+        private string vContrasena;
 
         #endregion
         #region Declaracion de Constructor
@@ -58,6 +60,18 @@ namespace Comunes.Estructuras
             set
             {
                 vIdTipoUsuario = value;
+            }
+        }
+
+        public string Contrasena
+        {
+            get
+            {
+                return vContrasena;
+            }
+            set
+            {
+                vContrasena = value;
             }
         }
 

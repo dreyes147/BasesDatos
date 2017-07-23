@@ -45,16 +45,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
+    <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mAreaTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mAreaTrabajo.Designer.cs">
+      <DependentUpon>mAreaTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mEstadoAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mEstadoAsiento.Designer.cs">
+      <DependentUpon>mEstadoAsiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mEstadoPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mEstadoPersona.Designer.cs">
+      <DependentUpon>mEstadoPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mEstadoReservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mEstadoReservacion.Designer.cs">
+      <DependentUpon>mEstadoReservacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mGenero.Designer.cs">
+      <DependentUpon>mGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mIdioma.Designer.cs">
+      <DependentUpon>mIdioma.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mAreaTrabajo.resx">
+      <DependentUpon>mAreaTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mEstadoAsiento.resx">
+      <DependentUpon>mEstadoAsiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mEstadoPersona.resx">
+      <DependentUpon>mEstadoPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mEstadoReservacion.resx">
+      <DependentUpon>mEstadoReservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mGenero.resx">
+      <DependentUpon>mGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mIdioma.resx">
+      <DependentUpon>mIdioma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,6 +159,39 @@
       <Project>{36263997-a369-4f84-b387-d4bd19a6e654}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clave-de-seguridad-simbolo-de-interfaz-de-silueta-de-la-herramienta-de-la-contrasena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario-hombre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pelicula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ingresar-boton-de-flecha-en-esquema-de-cuadrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\curves-295400_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hecho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-de-suma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

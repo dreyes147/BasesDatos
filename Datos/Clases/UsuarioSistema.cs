@@ -31,6 +31,7 @@ namespace Datos.Clases
                 vSQL += "IdPersona ";
                 vSQL += ",IdTipoPersona ";
                 vSQL += ",IdTipoUsuario ";
+                vSQL += ",Contrasena ";
                 vSQL += "FROM dbo.USUARIO_SISTEMA";
                 if (pFiltros != null && pFiltros.Count != 0)
                 {
@@ -53,8 +54,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.USUARIO_SISTEMA (IdPersona, IdTipoPersona, IdTipoUsuario) ";
-                vSQL += "VALUES(" + pDatos.IdPersona.ToString() + ", " + pDatos.IdTipoPersona.ToString() + ", " + pDatos.IdTipoUsuario.ToString() + "" + ")";
+                vSQL += "INSERT INTO dbo.USUARIO_SISTEMA (IdPersona, IdTipoPersona, IdTipoUsuario, Contrasena) ";
+                vSQL += "VALUES(" + pDatos.IdPersona.ToString() + ", " + pDatos.IdTipoPersona.ToString() + ", " + pDatos.IdTipoUsuario.ToString() + ", " + "'" + pDatos.Contrasena + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -94,7 +95,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.USUARIO_SISTEMA SET " + "IdPersona = " + pDatos.IdPersona.ToString() + ", " + "IdTipoPersona = " + pDatos.IdTipoPersona.ToString() + ", " + "IdTipoUsuario = " + pDatos.IdTipoUsuario.ToString() + "";
+                vSQL += "UPDATE dbo.USUARIO_SISTEMA SET " + "IdPersona = " + pDatos.IdPersona.ToString() + ", " + "IdTipoPersona = " + pDatos.IdTipoPersona.ToString() + ", " + "IdTipoUsuario = " + pDatos.IdTipoUsuario.ToString() + ", " + "Contrasena = " + "'" + pDatos.Contrasena + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);
