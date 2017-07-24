@@ -173,7 +173,7 @@ namespace Comunes.Filtros
                         }
                         else
                         {
-                            vWhere += "WHERE " + vQuery;
+                            vWhere += " WHERE " + vQuery;
                         }
                     }
                 }

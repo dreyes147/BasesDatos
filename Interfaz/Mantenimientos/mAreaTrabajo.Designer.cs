@@ -35,27 +35,27 @@
             this.colIdIArea = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColDescripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbpInformacion = new System.Windows.Forms.TabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tspBarraMenu = new System.Windows.Forms.ToolStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.gboDescripcion = new System.Windows.Forms.GroupBox();
-            this.btnAgregar = new System.Windows.Forms.ToolStripButton();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.lblId = new System.Windows.Forms.Label();
+            this.gboDescripcion = new System.Windows.Forms.GroupBox();
             this.lblIdentificador = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tspBarraMenu = new System.Windows.Forms.ToolStrip();
+            this.btnAgregar = new System.Windows.Forms.ToolStripButton();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbcInformacion.SuspendLayout();
             this.tbpLista.SuspendLayout();
             this.tbpInformacion.SuspendLayout();
+            this.gboDescripcion.SuspendLayout();
             this.tspBarraMenu.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.gboDescripcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,105 +119,6 @@
             this.tbpInformacion.Text = "Información";
             this.tbpInformacion.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 482);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(581, 22);
-            this.statusStrip1.TabIndex = 10;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // tspBarraMenu
-            // 
-            this.tspBarraMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.tspBarraMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAgregar,
-            this.btnModificar,
-            this.btnEliminar});
-            this.tspBarraMenu.Location = new System.Drawing.Point(0, 66);
-            this.tspBarraMenu.Name = "tspBarraMenu";
-            this.tspBarraMenu.Size = new System.Drawing.Size(581, 25);
-            this.tspBarraMenu.TabIndex = 12;
-            this.tspBarraMenu.Text = "toolStrip1";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 66);
-            this.panel1.TabIndex = 11;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(74, 56);
-            this.txtDescripcion.MaxLength = 40;
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(452, 74);
-            this.txtDescripcion.TabIndex = 0;
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(7, 59);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
-            this.lblDescripcion.TabIndex = 1;
-            this.lblDescripcion.Text = "Descripción:";
-            // 
-            // gboDescripcion
-            // 
-            this.gboDescripcion.Controls.Add(this.lblIdentificador);
-            this.gboDescripcion.Controls.Add(this.lblId);
-            this.gboDescripcion.Controls.Add(this.txtDescripcion);
-            this.gboDescripcion.Controls.Add(this.lblDescripcion);
-            this.gboDescripcion.Location = new System.Drawing.Point(6, 6);
-            this.gboDescripcion.Name = "gboDescripcion";
-            this.gboDescripcion.Size = new System.Drawing.Size(539, 148);
-            this.gboDescripcion.TabIndex = 1;
-            this.gboDescripcion.TabStop = false;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::Interfaz.Properties.Resources.boton_de_suma;
-            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(69, 22);
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Image = global::Interfaz.Properties.Resources.editar;
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(78, 22);
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = global::Interfaz.Properties.Resources.eliminar__1_;
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 22);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Interfaz.Properties.Resources.curves_295400_640;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSalir
             // 
             this.btnSalir.Image = global::Interfaz.Properties.Resources.logout__1_;
@@ -254,14 +155,17 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // lblId
+            // gboDescripcion
             // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(71, 18);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(13, 13);
-            this.lblId.TabIndex = 2;
-            this.lblId.Text = "0";
+            this.gboDescripcion.Controls.Add(this.lblIdentificador);
+            this.gboDescripcion.Controls.Add(this.lblId);
+            this.gboDescripcion.Controls.Add(this.txtDescripcion);
+            this.gboDescripcion.Controls.Add(this.lblDescripcion);
+            this.gboDescripcion.Location = new System.Drawing.Point(6, 6);
+            this.gboDescripcion.Name = "gboDescripcion";
+            this.gboDescripcion.Size = new System.Drawing.Size(539, 132);
+            this.gboDescripcion.TabIndex = 1;
+            this.gboDescripcion.TabStop = false;
             // 
             // lblIdentificador
             // 
@@ -271,6 +175,104 @@
             this.lblIdentificador.Size = new System.Drawing.Size(21, 13);
             this.lblIdentificador.TabIndex = 3;
             this.lblIdentificador.Text = "ID:";
+            this.lblIdentificador.Visible = false;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(34, 16);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(13, 13);
+            this.lblId.TabIndex = 2;
+            this.lblId.Text = "0";
+            this.lblId.Visible = false;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(74, 38);
+            this.txtDescripcion.MaxLength = 40;
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(452, 74);
+            this.txtDescripcion.TabIndex = 0;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(7, 41);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
+            this.lblDescripcion.TabIndex = 1;
+            this.lblDescripcion.Text = "Descripción:";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 482);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(581, 22);
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tspBarraMenu
+            // 
+            this.tspBarraMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tspBarraMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAgregar,
+            this.btnModificar,
+            this.btnEliminar});
+            this.tspBarraMenu.Location = new System.Drawing.Point(0, 66);
+            this.tspBarraMenu.Name = "tspBarraMenu";
+            this.tspBarraMenu.Size = new System.Drawing.Size(581, 25);
+            this.tspBarraMenu.TabIndex = 12;
+            this.tspBarraMenu.Text = "toolStrip1";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::Interfaz.Properties.Resources.boton_de_suma;
+            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(69, 22);
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Image = global::Interfaz.Properties.Resources.editar;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(78, 22);
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = global::Interfaz.Properties.Resources.eliminar__1_;
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 22);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(581, 66);
+            this.panel1.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Interfaz.Properties.Resources.curves_295400_640;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(74, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // mAreaTrabajo
             // 
@@ -288,11 +290,11 @@
             this.tbcInformacion.ResumeLayout(false);
             this.tbpLista.ResumeLayout(false);
             this.tbpInformacion.ResumeLayout(false);
+            this.gboDescripcion.ResumeLayout(false);
+            this.gboDescripcion.PerformLayout();
             this.tspBarraMenu.ResumeLayout(false);
             this.tspBarraMenu.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.gboDescripcion.ResumeLayout(false);
-            this.gboDescripcion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

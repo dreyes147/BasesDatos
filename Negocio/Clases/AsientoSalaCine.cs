@@ -53,6 +53,23 @@ namespace Negocio.Clases
         }
         #endregion
 
+        #region Declaracion de Metodo Eliminar
+        public void Eliminar(List<Filtro> pFiltros)
+        {
+            try
+            {
+                if (pFiltros != null)
+                {
+                    vDatos.Eliminar(pFiltros);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
+
         #region Declaracion de Metodo Actualizar
         public void Actualizar(Comunes.Estructuras.AsientoSalaCine pDatos, List<Filtro> pFiltro)
         {

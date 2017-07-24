@@ -52,8 +52,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.ESTADO_ASIENTO (IdEstadoAsiento, DescripcionEstadoAsiento) ";
-                vSQL += "VALUES(" + pDatos.IdEstadoAsiento.ToString() + ", " + "'" + pDatos.DescripcionEstadoAsiento + "'" + ")";
+                vSQL += "INSERT INTO dbo.ESTADO_ASIENTO (DescripcionEstadoAsiento) ";
+                vSQL += "VALUES(" + "'" + pDatos.DescripcionEstadoAsiento + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -93,7 +93,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.ESTADO_ASIENTO SET " + "IdEstadoAsiento = " + pDatos.IdEstadoAsiento.ToString() + ", " + "DescripcionEstadoAsiento = " + "'" + pDatos.DescripcionEstadoAsiento + "'";
+                vSQL += "UPDATE dbo.ESTADO_ASIENTO SET "  + "DescripcionEstadoAsiento = " + "'" + pDatos.DescripcionEstadoAsiento + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);

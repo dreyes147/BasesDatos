@@ -100,12 +100,20 @@ namespace Interfaz.Mantenimientos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            ListView.SelectedListViewItemCollection vSeleccionados = this.ltvInformacion.SelectedItems;
             try
             {
                 if (ltvInformacion.SelectedIndices.Count > 0)
                 {
                     OcultarTab();
                     vModo = "M";
+                    foreach (ListViewItem vItem in vSeleccionados)
+                    {
+                        lblId.Text = vItem.SubItems[0].Text;
+                        txtDescripcion.Text = vItem.SubItems[1].Text;
+                    }
+                    lblId.Visible = true;
+                    lblIdentificador.Visible = true;
                 }
                 else
                 {
@@ -120,12 +128,22 @@ namespace Interfaz.Mantenimientos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            ListView.SelectedListViewItemCollection vSeleccionados = this.ltvInformacion.SelectedItems;
             try
             {
                 if (ltvInformacion.SelectedIndices.Count > 0)
                 {
                     OcultarTab();
-                vModo = "E";
+                    vModo = "E";
+
+                    foreach (ListViewItem vItem in vSeleccionados)
+                    {
+                        lblId.Text = vItem.SubItems[0].Text;
+                        txtDescripcion.Text = vItem.SubItems[1].Text;
+                    }
+                    lblId.Visible = true;
+                    lblIdentificador.Visible = true;
+                    txtDescripcion.Enabled = false;
                 }
                 else
                 {
@@ -186,11 +204,23 @@ namespace Interfaz.Mantenimientos
                             vEstructura.IdAreaTrabajo = Convert.ToInt32(lblId.Text);
                             vFiltros.Add(new Comunes.Filtros.Filtro("IdArea", "=", Convert.ToInt32(lblId.Text)));
                             vNegocio.Actualizar(vEstructura, vFiltros);
+                            tbpLista.Parent = tbcInformacion;
+                            tbcInformacion.SelectedTab = tbpLista;
+                            tspBarraMenu.Visible = true;
+                            tbpInformacion.Parent = null;
+                            vModo = string.Empty;
+                            CargarVista();
                             break;
 
                         default:
                             vFiltros.Add(new Comunes.Filtros.Filtro("IdArea", "=", Convert.ToInt32(lblId.Text)));
                             vNegocio.Eliminar( vFiltros);
+                            tbpLista.Parent = tbcInformacion;
+                            tbcInformacion.SelectedTab = tbpLista;
+                            tspBarraMenu.Visible = true;
+                            tbpInformacion.Parent = null;
+                            vModo = string.Empty;
+                            CargarVista();
                             break;
                     }  
                 }
@@ -202,6 +232,7 @@ namespace Interfaz.Mantenimientos
                 MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarVista();
                 txtDescripcion.Text = string.Empty;
+                lblId.Text = string.Empty;
             }
             catch (Exception ex)
             {
@@ -211,7 +242,6 @@ namespace Interfaz.Mantenimientos
         }
 
         #endregion
-
 
     }
 }
