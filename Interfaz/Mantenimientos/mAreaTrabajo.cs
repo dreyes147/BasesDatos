@@ -16,5 +16,199 @@ namespace Interfaz.Mantenimientos
         {
             InitializeComponent();
         }
+
+        #region Declaracion de Variables
+
+        private string vModo = string.Empty;
+
+        #endregion
+
+        #region Declaracion de Metodos
+
+        private void Inicializar()
+        {
+            try
+            {
+                CargarVista();
+                tbpInformacion.Parent = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void CargarVista()
+        {
+            DataTable vResultados = new DataTable();
+            Negocio.Clases.AreaTrabajo vArea = new Negocio.Clases.AreaTrabajo();
+            List<Comunes.Filtros.Filtro> vFiltros = new List<Comunes.Filtros.Filtro>();
+            ListViewItem vItem = new ListViewItem();
+            try
+            {
+                vResultados = vArea.Selecccionar(vFiltros);
+
+                foreach (DataRow vRow in vResultados.Rows) {
+                    vItem = ltvInformacion.Items.Add(vRow["IdArea"].ToString());
+                    vItem.SubItems.Add(vRow["DescripcionArea"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+        }
+
+        private void OcultarTab()
+        {
+            try
+            {
+                tbpInformacion.Parent = tbcInformacion;
+                tbcInformacion.SelectedTab = tbpInformacion;
+                tbpLista.Parent = null;
+                tspBarraMenu.Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        #endregion
+
+        #region Declaracion de Eventos 
+
+        private void mAreaTrabajo_Load(object sender, EventArgs e)
+        {
+            Inicializar();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OcultarTab();
+                 vModo = "A";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ltvInformacion.SelectedIndices.Count > 0)
+                {
+                    OcultarTab();
+                    vModo = "M";
+                }
+                else
+                {
+                    MessageBox.Show("Favor seleccionar un registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ltvInformacion.SelectedIndices.Count > 0)
+                {
+                    OcultarTab();
+                vModo = "E";
+                }
+                else
+                {
+                    MessageBox.Show("Favor seleccionar un registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+              }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tbpLista.Parent = tbcInformacion;
+                tbcInformacion.SelectedTab = tbpLista;
+                tspBarraMenu.Visible = true;
+                tbpInformacion.Parent = null;
+                vModo = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Comunes.Estructuras.AreaTrabajo vEstructura = new Comunes.Estructuras.AreaTrabajo();
+            Negocio.Clases.AreaTrabajo vNegocio = new Negocio.Clases.AreaTrabajo();
+            List<Comunes.Filtros.Filtro> vFiltros = new List<Comunes.Filtros.Filtro>();
+            try
+            {
+                if (txtDescripcion.Text.Trim() != string.Empty) {
+                    
+                    vEstructura.DescripcionArea = txtDescripcion.Text;
+                    switch (vModo){
+                        case "A":
+                            vEstructura.IdAreaTrabajo = 0;
+                            vNegocio.Insertar(vEstructura);
+                            break;
+                        case "M":
+                            vEstructura.IdAreaTrabajo = Convert.ToInt32(lblId.Text);
+                            vFiltros.Add(new Comunes.Filtros.Filtro("IdArea", "=", Convert.ToInt32(lblId.Text)));
+                            vNegocio.Actualizar(vEstructura, vFiltros);
+                            break;
+
+                        default:
+                            vFiltros.Add(new Comunes.Filtros.Filtro("IdArea", "=", Convert.ToInt32(lblId.Text)));
+                            vNegocio.Eliminar( vFiltros);
+                            break;
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("El campo descripción no puede contener un valor no valido, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                txtDescripcion.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+
+        }
+
+        #endregion
+
+
     }
 }

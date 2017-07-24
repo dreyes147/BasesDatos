@@ -35,7 +35,7 @@ namespace Datos.Clases
                 {
                     vSQL += vFiltros.CrearWhere(pFiltros);
                 }
-                vConnexion.Seleccionar(vSQL, "BASEDATOS");
+                 dtResultado = vConnexion.Seleccionar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
             {

@@ -46,6 +46,21 @@ namespace Negocio.Clases
             }
         }
 
+        public void Eliminar(List<Filtro> pFiltros)
+        {
+            try
+            {
+                if (pFiltros != null)
+                {
+                    vDatos.Eliminar(pFiltros);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
 
         public void Actualizar(Comunes.Estructuras.AreaTrabajo pDatos, List<Filtro> pFiltro)
         {

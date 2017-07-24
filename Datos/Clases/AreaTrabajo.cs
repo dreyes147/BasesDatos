@@ -23,13 +23,13 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "SELECT IdArea,";
-                vSQL += "DescripcionArea";
-                vSQL += "FROM dbo.AREA_TRABAJO";
+                vSQL += "SELECT IdArea, ";
+                vSQL += "DescripcionArea ";
+                vSQL += "FROM dbo.AREA_TRABAJO ";
                 if (pFiltros != null && pFiltros.Count != 0) {
                     vSQL += vFiltros.CrearWhere(pFiltros);
                 }
-                vConnexion.Seleccionar(vSQL, "BASEDATOS");
+                dtResultado =  dtResultado = vConnexion.Seleccionar(vSQL, "BASEDATOS");
             }
             catch (Exception ex) {
                 throw new Exception(ex.Message, ex);
@@ -45,7 +45,7 @@ namespace Datos.Clases
             try
             {
                 vSQL += "INSERT INTO dbo.AREA_TRABAJO (DescripcionArea) ";
-                vSQL += "VALUES('" + pDatos.DescripcionArea + "'";
+                vSQL += "VALUES('" + pDatos.DescripcionArea + "')";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)

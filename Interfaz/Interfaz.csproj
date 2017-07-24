@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,6 +90,12 @@
     <Compile Include="Mantenimientos\mEstadoReservacion.Designer.cs">
       <DependentUpon>mEstadoReservacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mEstadoSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mEstadoSala.Designer.cs">
+      <DependentUpon>mEstadoSala.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mGenero.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mEstadoReservacion.resx">
       <DependentUpon>mEstadoReservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mEstadoSala.resx">
+      <DependentUpon>mEstadoSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mGenero.resx">
       <DependentUpon>mGenero.cs</DependentUpon>
@@ -155,6 +179,10 @@
     <None Include="Resources\salir-de-mi-perfil-icono-3964-16.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Comunes\Comunes.csproj">
+      <Project>{ec16360e-a919-4409-91f2-5482ddba53fc}</Project>
+      <Name>Comunes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{36263997-a369-4f84-b387-d4bd19a6e654}</Project>
       <Name>Negocio</Name>
@@ -192,6 +220,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eliminar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comprobado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-atras-izquierda-de-angulo-de-regresar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
