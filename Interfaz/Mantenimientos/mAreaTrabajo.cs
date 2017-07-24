@@ -82,7 +82,14 @@ namespace Interfaz.Mantenimientos
 
         private void mAreaTrabajo_Load(object sender, EventArgs e)
         {
-            Inicializar();
+            try
+            {
+                Inicializar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

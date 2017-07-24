@@ -16,7 +16,7 @@ namespace Interfaz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Interfaz.Mantenimientos.mAreaTrabajo());
+            Application.Run(new Interfaz.Mantenimientos.mEstadoPersona());
         }
     }
 }
