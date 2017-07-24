@@ -47,7 +47,7 @@ namespace Interfaz.Mantenimientos
             try
             {
                 vResultados = vArea.Selecccionar(vFiltros);
-
+                ltvInformacion.Items.Clear();
                 foreach (DataRow vRow in vResultados.Rows) {
                     vItem = ltvInformacion.Items.Add(vRow["IdArea"].ToString());
                     vItem.SubItems.Add(vRow["DescripcionArea"].ToString());
@@ -159,6 +159,7 @@ namespace Interfaz.Mantenimientos
                 tspBarraMenu.Visible = true;
                 tbpInformacion.Parent = null;
                 vModo = string.Empty;
+                CargarVista();
             }
             catch (Exception ex)
             {
@@ -191,13 +192,13 @@ namespace Interfaz.Mantenimientos
                             vFiltros.Add(new Comunes.Filtros.Filtro("IdArea", "=", Convert.ToInt32(lblId.Text)));
                             vNegocio.Eliminar( vFiltros);
                             break;
-                    }
-                    
+                    }  
                 }
                 else
                 {
                     MessageBox.Show("El campo descripción no puede contener un valor no valido, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                CargarVista();
                 txtDescripcion.Text = string.Empty;
             }
             catch (Exception ex)
