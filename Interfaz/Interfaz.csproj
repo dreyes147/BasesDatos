@@ -108,6 +108,60 @@
     <Compile Include="Mantenimientos\mIdioma.Designer.cs">
       <DependentUpon>mIdioma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mSubtitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mSubtitulo.Designer.cs">
+      <DependentUpon>mSubtitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoAsiento.Designer.cs">
+      <DependentUpon>mTipoAsiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoCliente.Designer.cs">
+      <DependentUpon>mTipoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoPago.Designer.cs">
+      <DependentUpon>mTipoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoPersona.Designer.cs">
+      <DependentUpon>mTipoPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoPromocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoPromocion.Designer.cs">
+      <DependentUpon>mTipoPromocion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoProyeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoProyeccion.Designer.cs">
+      <DependentUpon>mTipoProyeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoSala.Designer.cs">
+      <DependentUpon>mTipoSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mTipoUsuario.Designer.cs">
+      <DependentUpon>mTipoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login\Login.resx">
@@ -133,6 +187,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mIdioma.resx">
       <DependentUpon>mIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mSubtitulo.resx">
+      <DependentUpon>mSubtitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mTipoAsiento.resx">
+      <DependentUpon>mTipoAsiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mTipoCliente.resx">
+      <DependentUpon>mTipoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mTipoPago.resx">
+      <DependentUpon>mTipoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mTipoPersona.resx">
+      <DependentUpon>mTipoPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mTipoPromocion.resx">
+      <DependentUpon>mTipoPromocion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mTipoProyeccion.resx">
+      <DependentUpon>mTipoProyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mTipoSala.resx">
+      <DependentUpon>mTipoSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mTipoUsuario.resx">
+      <DependentUpon>mTipoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

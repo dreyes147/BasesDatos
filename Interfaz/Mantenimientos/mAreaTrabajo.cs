@@ -41,12 +41,12 @@ namespace Interfaz.Mantenimientos
         private void CargarVista()
         {
             DataTable vResultados = new DataTable();
-            Negocio.Clases.AreaTrabajo vArea = new Negocio.Clases.AreaTrabajo();
+            Negocio.Clases.AreaTrabajo vPrx = new Negocio.Clases.AreaTrabajo();
             List<Comunes.Filtros.Filtro> vFiltros = new List<Comunes.Filtros.Filtro>();
             ListViewItem vItem = new ListViewItem();
             try
             {
-                vResultados = vArea.Selecccionar(vFiltros);
+                vResultados = vPrx.Selecccionar(vFiltros);
                 ltvInformacion.Items.Clear();
                 foreach (DataRow vRow in vResultados.Rows) {
                     vItem = ltvInformacion.Items.Add(vRow["IdArea"].ToString());

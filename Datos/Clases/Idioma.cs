@@ -53,8 +53,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.IDIOMA (IdIdioma, DescripcionIdioma) ";
-                vSQL += "VALUES(" + pDatos.IdIdioma.ToString() + ", " + "'" + pDatos.DescripcionIdioma + "'" + ")";
+                vSQL += "INSERT INTO dbo.IDIOMA ( DescripcionIdioma) ";
+                vSQL += "VALUES(" + "'" + pDatos.DescripcionIdioma + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.IDIOMA SET " + "IdIdioma = " + pDatos.IdIdioma.ToString() + ", " + "DescripcionIdioma = " + "'" + pDatos.DescripcionIdioma + "'";
+                vSQL += "UPDATE dbo.IDIOMA SET " + "DescripcionIdioma = " + "'" + pDatos.DescripcionIdioma + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);

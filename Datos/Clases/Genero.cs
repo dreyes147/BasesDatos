@@ -53,8 +53,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.GENERO (IdGenero, DescripcionGenero) ";
-                vSQL += "VALUES(" + pDatos.IdGenero.ToString() + ", " + "'" + pDatos.DescripcionGenero + "'" + ")";
+                vSQL += "INSERT INTO dbo.GENERO (DescripcionGenero) ";
+                vSQL += "VALUES(" + "'" + pDatos.DescripcionGenero + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.GENERO SET " + "IdGenero = " + pDatos.IdGenero.ToString() + ", " + "DescripcionGenero = " + "'" + pDatos.DescripcionGenero + "'";
+                vSQL += "UPDATE dbo.GENERO SET " + "DescripcionGenero = " + "'" + pDatos.DescripcionGenero + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);
