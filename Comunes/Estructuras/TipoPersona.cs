@@ -12,7 +12,7 @@ namespace Comunes.Estructuras
         #region Declaracion de atributos
 
         private int vIdTipoPersona;
-        private string vDescripcionTipoAsiento;
+        private string vDescripcionTipoPersona;
 
         #endregion
         #region Declaracion de Constructor
@@ -36,15 +36,15 @@ namespace Comunes.Estructuras
             }
         }
 
-        public string DescripcionTipoAsiento
+        public string DescripcionTipoPersona
         {
             get
             {
-                return vDescripcionTipoAsiento;
+                return vDescripcionTipoPersona;
             }
             set
             {
-                vDescripcionTipoAsiento = value;
+                vDescripcionTipoPersona = value;
             }
         }
 

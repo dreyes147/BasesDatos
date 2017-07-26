@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mTipoPersona));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ltvInformacion = new System.Windows.Forms.ListView();
-            this.colIdIGenero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdITipoPersona = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColDescripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbcInformacion = new System.Windows.Forms.TabControl();
             this.tbpLista = new System.Windows.Forms.TabPage();
             this.tbpInformacion = new System.Windows.Forms.TabPage();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.gboDescripcion = new System.Windows.Forms.GroupBox();
             this.lblIdentificador = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.tspBarraMenu = new System.Windows.Forms.ToolStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbcInformacion.SuspendLayout();
             this.tbpLista.SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             this.ltvInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ltvInformacion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colIdIGenero,
+            this.colIdITipoPersona,
             this.ColDescripcion});
             this.ltvInformacion.GridLines = true;
             this.ltvInformacion.Location = new System.Drawing.Point(6, 6);
@@ -80,15 +81,15 @@
             this.ltvInformacion.UseCompatibleStateImageBehavior = false;
             this.ltvInformacion.View = System.Windows.Forms.View.Details;
             // 
-            // colIdIGenero
+            // colIdITipoPersona
             // 
-            this.colIdIGenero.Text = "Identificador Genero";
-            this.colIdIGenero.Width = 114;
+            this.colIdITipoPersona.Text = "Identificador Tipo Persona";
+            this.colIdITipoPersona.Width = 136;
             // 
             // ColDescripcion
             // 
             this.ColDescripcion.Text = "Descripcion";
-            this.ColDescripcion.Width = 421;
+            this.ColDescripcion.Width = 400;
             // 
             // tbcInformacion
             // 
@@ -124,6 +125,42 @@
             this.tbpInformacion.TabIndex = 1;
             this.tbpInformacion.Text = "Información";
             this.tbpInformacion.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::Interfaz.Properties.Resources.logout__1_;
+            this.btnSalir.Location = new System.Drawing.Point(16, 317);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 7;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = global::Interfaz.Properties.Resources.comprobado;
+            this.btnAceptar.Location = new System.Drawing.Point(376, 317);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 24);
+            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Image = global::Interfaz.Properties.Resources.flecha_atras_izquierda_de_angulo_de_regresar;
+            this.btnRegresar.Location = new System.Drawing.Point(457, 317);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegresar.TabIndex = 6;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // gboDescripcion
             // 
@@ -188,6 +225,33 @@
             this.tspBarraMenu.TabIndex = 11;
             this.tspBarraMenu.Text = "toolStrip1";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::Interfaz.Properties.Resources.boton_de_suma;
+            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(69, 22);
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Image = global::Interfaz.Properties.Resources.editar;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(78, 22);
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = global::Interfaz.Properties.Resources.eliminar__1_;
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 22);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -198,63 +262,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(579, 66);
             this.panel1.TabIndex = 9;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = global::Interfaz.Properties.Resources.logout__1_;
-            this.btnSalir.Location = new System.Drawing.Point(16, 317);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 7;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Image = global::Interfaz.Properties.Resources.comprobado;
-            this.btnAceptar.Location = new System.Drawing.Point(376, 317);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 24);
-            this.btnAceptar.TabIndex = 4;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Image = global::Interfaz.Properties.Resources.flecha_atras_izquierda_de_angulo_de_regresar;
-            this.btnRegresar.Location = new System.Drawing.Point(457, 317);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegresar.TabIndex = 6;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::Interfaz.Properties.Resources.boton_de_suma;
-            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(69, 22);
-            this.btnAgregar.Text = "Agregar";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Image = global::Interfaz.Properties.Resources.editar;
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(78, 22);
-            this.btnModificar.Text = "Modificar";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = global::Interfaz.Properties.Resources.eliminar__1_;
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 22);
-            this.btnEliminar.Text = "Eliminar";
             // 
             // pictureBox1
             // 
@@ -275,8 +282,10 @@
             this.Controls.Add(this.tbcInformacion);
             this.Controls.Add(this.tspBarraMenu);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mTipoPersona";
-            this.Text = "mTipoPersona";
+            this.Text = "TipoPersona";
+            this.Load += new System.EventHandler(this.mTipoPersona_Load);
             this.tbcInformacion.ResumeLayout(false);
             this.tbpLista.ResumeLayout(false);
             this.tbpInformacion.ResumeLayout(false);
@@ -295,7 +304,7 @@
 
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ListView ltvInformacion;
-        private System.Windows.Forms.ColumnHeader colIdIGenero;
+        private System.Windows.Forms.ColumnHeader colIdITipoPersona;
         private System.Windows.Forms.ColumnHeader ColDescripcion;
         private System.Windows.Forms.TabControl tbcInformacion;
         private System.Windows.Forms.TabPage tbpLista;

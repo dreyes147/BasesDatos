@@ -29,7 +29,7 @@ namespace Datos.Clases
             {
                 vSQL += "SELECT ";
                 vSQL += "IdTipoPersona ";
-                vSQL += ",DescripcionTipoAsiento ";
+                vSQL += ",DescripcionTipoPersona ";
                 vSQL += "FROM dbo.TIPO_PERSONA";
                 if (pFiltros != null && pFiltros.Count != 0)
                 {
@@ -52,8 +52,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.TIPO_PERSONA (IdTipoPersona, DescripcionTipoAsiento) ";
-                vSQL += "VALUES(" + pDatos.IdTipoPersona.ToString() + ", " + "'" + pDatos.DescripcionTipoAsiento + "'" + ")";
+                vSQL += "INSERT INTO dbo.TIPO_PERSONA (DescripcionTipoPersona) ";
+                vSQL += "VALUES(" + "'" + pDatos.DescripcionTipoPersona + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -93,7 +93,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.TIPO_PERSONA SET " + "IdTipoPersona = " + pDatos.IdTipoPersona.ToString() + ", " + "DescripcionTipoAsiento = " + "'" + pDatos.DescripcionTipoAsiento + "'";
+                vSQL += "UPDATE dbo.TIPO_PERSONA SET "  + "DescripcionTipoPersona = " + "'" + pDatos.DescripcionTipoPersona + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);

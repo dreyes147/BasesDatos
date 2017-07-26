@@ -53,8 +53,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.TIPO_PROMOCION (IdTipoPromocion, ValorPromocion, DescripcionTipoPromocion) ";
-                vSQL += "VALUES(" + pDatos.IdTipoPromocion.ToString() + ", " + "'" + pDatos.ValorPromocion + "', " + "'" + pDatos.DescripcionTipoPromocion + "'" + ")";
+                vSQL += "INSERT INTO dbo.TIPO_PROMOCION (ValorPromocion, DescripcionTipoPromocion) ";
+                vSQL += "VALUES(" + "'" + pDatos.ValorPromocion + "', " + "'" + pDatos.DescripcionTipoPromocion + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.TIPO_PROMOCION SET " + "IdTipoPromocion = " + pDatos.IdTipoPromocion.ToString() + ", " + "ValorPromocion = " + "'" + pDatos.ValorPromocion + "', " + "DescripcionTipoPromocion = " + "'" + pDatos.DescripcionTipoPromocion + "'";
+                vSQL += "UPDATE dbo.TIPO_PROMOCION SET " + "ValorPromocion = " + "'" + pDatos.ValorPromocion + "', " + "DescripcionTipoPromocion = " + "'" + pDatos.DescripcionTipoPromocion + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);

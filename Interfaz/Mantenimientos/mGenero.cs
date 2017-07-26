@@ -215,6 +215,7 @@ namespace Interfaz.Mantenimientos
                             tbpInformacion.Parent = null;
                             vModo = string.Empty;
                             CargarVista();
+                            txtDescripcion.Enabled = true;
                             break;
                     }
                 }

@@ -52,8 +52,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.SUBTITULO (IdSubtitulo, DescripcionSubtitulo) ";
-                vSQL += "VALUES(" + pDatos.IdSubtitulo.ToString() + ", " + "'" + pDatos.DescripcionSubtitulo + "'" + ")";
+                vSQL += "INSERT INTO dbo.SUBTITULO (DescripcionSubtitulo) ";
+                vSQL += "VALUES(" + "'" + pDatos.DescripcionSubtitulo + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -93,7 +93,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.SUBTITULO SET " + "IdSubtitulo = " + pDatos.IdSubtitulo.ToString() + ", " + "DescripcionSubtitulo = " + "'" + pDatos.DescripcionSubtitulo + "'";
+                vSQL += "UPDATE dbo.SUBTITULO SET " + "DescripcionSubtitulo = " + "'" + pDatos.DescripcionSubtitulo + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);
@@ -148,7 +148,6 @@ namespace Datos.Clases
             }
         }
         #endregion
-
 
     }
 }

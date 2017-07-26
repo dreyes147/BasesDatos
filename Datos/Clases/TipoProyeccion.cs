@@ -52,8 +52,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.TIPO_PROYECCION (IdTipoProyeccion, DescripcionTipoProyeccion) ";
-                vSQL += "VALUES(" + pDatos.IdTipoProyeccion.ToString() + ", " + "'" + pDatos.DescripcionTipoProyeccion + "'" + ")";
+                vSQL += "INSERT INTO dbo.TIPO_PROYECCION ( DescripcionTipoProyeccion) ";
+                vSQL += "VALUES(" + "'" + pDatos.DescripcionTipoProyeccion + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -93,7 +93,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.TIPO_PROYECCION SET " + "IdTipoProyeccion = " + pDatos.IdTipoProyeccion.ToString() + ", " + "DescripcionTipoProyeccion = " + "'" + pDatos.DescripcionTipoProyeccion + "'";
+                vSQL += "UPDATE dbo.TIPO_PROYECCION SET " + "DescripcionTipoProyeccion = " + "'" + pDatos.DescripcionTipoProyeccion + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);

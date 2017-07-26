@@ -52,8 +52,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.TIPO_SALA (IdTipoSala, DescripcionTipoSala) ";
-                vSQL += "VALUES(" + pDatos.IdTipoSala.ToString() + ", " + "'" + pDatos.DescripcionTipoSala + "'" + ")";
+                vSQL += "INSERT INTO dbo.TIPO_SALA ( DescripcionTipoSala) ";
+                vSQL += "VALUES(" + "'" + pDatos.DescripcionTipoSala + "'" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -93,7 +93,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.TIPO_SALA SET " + "IdTipoSala = " + pDatos.IdTipoSala.ToString() + ", " + "DescripcionTipoSala = " + "'" + pDatos.DescripcionTipoSala + "'";
+                vSQL += "UPDATE dbo.TIPO_SALA SET " + "DescripcionTipoSala = " + "'" + pDatos.DescripcionTipoSala + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);
