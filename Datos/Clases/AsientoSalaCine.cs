@@ -56,8 +56,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.ASIENTO_SALA_CINE (IdNumeroAsiento, IdSala, IdTipoSala, IdTipoAsiento, IdEstadoAsiento) ";
-                vSQL += "VALUES(" + pDatos.IdNumeroAsiento.ToString() + ", " + pDatos.IdSala.ToString() + ", " + pDatos.IdTipoSala.ToString() + ", " + pDatos.IdTipoAsiento.ToString() + ", " + pDatos.IdEstadoAsiento.ToString() + "" + ")";
+                vSQL += "INSERT INTO dbo.ASIENTO_SALA_CINE (IdNumeroAsiento, IdSala, IdTipoAsiento, IdEstadoAsiento) ";
+                vSQL += "VALUES(" + pDatos.IdNumeroAsiento.ToString() + ", " + pDatos.IdSala.ToString() + ", " + pDatos.IdTipoAsiento.ToString() + ", " + pDatos.IdEstadoAsiento.ToString() + "" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.ASIENTO_SALA_CINE SET " + "IdNumeroAsiento = " + pDatos.IdNumeroAsiento.ToString() + ", " + "IdSala = " + pDatos.IdSala.ToString() + ", " + "IdTipoSala = " + pDatos.IdTipoSala.ToString() + ", " + "IdTipoAsiento = " + pDatos.IdTipoAsiento.ToString() + ", " + "IdEstadoAsiento = " + pDatos.IdEstadoAsiento.ToString() + "";
+                vSQL += "UPDATE dbo.ASIENTO_SALA_CINE SET " + "IdNumeroAsiento = " + pDatos.IdNumeroAsiento.ToString() + ", " + "IdSala = " + pDatos.IdSala.ToString() + ", " + "IdTipoAsiento = " + pDatos.IdTipoAsiento.ToString() + ", " + "IdEstadoAsiento = " + pDatos.IdEstadoAsiento.ToString() + "";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);

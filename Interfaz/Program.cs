@@ -16,7 +16,7 @@ namespace Interfaz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Interfaz.Mantenimientos.mTipoUsuario());
+            Application.Run(new Interfaz.Mantenimientos.mSalaCine());
         }
     }
 }

@@ -13,7 +13,6 @@ namespace Comunes.Estructuras
 
         private int vIdNumeroAsiento;
         private int vIdSala;
-        private int vIdTipoSala;
         private int vIdTipoAsiento;
         private int vIdEstadoAsiento;
 
@@ -48,18 +47,6 @@ namespace Comunes.Estructuras
             set
             {
                 vIdSala = value;
-            }
-        }
-
-        public int IdTipoSala
-        {
-            get
-            {
-                return vIdTipoSala;
-            }
-            set
-            {
-                vIdTipoSala = value;
             }
         }
 

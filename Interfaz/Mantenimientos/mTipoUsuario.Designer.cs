@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mTipoUsuario));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ltvInformacion = new System.Windows.Forms.ListView();
             this.colIdTipoUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -281,8 +282,9 @@
             this.Controls.Add(this.tbcInformacion);
             this.Controls.Add(this.tspBarraMenu);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mTipoUsuario";
-            this.Text = "mTipoUsuario";
+            this.Text = "TipoUsuario";
             this.Load += new System.EventHandler(this.mTipoUsuario_Load);
             this.tbcInformacion.ResumeLayout(false);
             this.tbpLista.ResumeLayout(false);

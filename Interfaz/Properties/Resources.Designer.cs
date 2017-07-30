@@ -234,6 +234,16 @@ namespace Interfaz.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sillon__8_ {
+            get {
+                object obj = ResourceManager.GetObject("sillon (8)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_icon_icons_com_66546__1_ {
             get {
                 object obj = ResourceManager.GetObject("user_icon-icons.com_66546 (1)", resourceCulture);

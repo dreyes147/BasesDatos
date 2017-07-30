@@ -72,6 +72,12 @@
     <Compile Include="Mantenimientos\mAreaTrabajo.Designer.cs">
       <DependentUpon>mAreaTrabajo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mAsientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mAsientos.Designer.cs">
+      <DependentUpon>mAsientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mEstadoAsiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="Mantenimientos\mIdioma.Designer.cs">
       <DependentUpon>mIdioma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mSalaCine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mSalaCine.Designer.cs">
+      <DependentUpon>mSalaCine.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\mSubtitulo.cs">
       <SubType>Form</SubType>
@@ -170,6 +182,9 @@
     <EmbeddedResource Include="Mantenimientos\mAreaTrabajo.resx">
       <DependentUpon>mAreaTrabajo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mAsientos.resx">
+      <DependentUpon>mAsientos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mEstadoAsiento.resx">
       <DependentUpon>mEstadoAsiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mIdioma.resx">
       <DependentUpon>mIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mSalaCine.resx">
+      <DependentUpon>mSalaCine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mSubtitulo.resx">
       <DependentUpon>mSubtitulo.cs</DependentUpon>
@@ -322,6 +340,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sillon %288%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

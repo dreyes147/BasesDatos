@@ -79,6 +79,7 @@ namespace Interfaz.Mantenimientos
 
         #endregion
 
+        #region Decladracion de Eventos
 
         private void mTipoUsuario_Load(object sender, EventArgs e)
         {
@@ -248,5 +249,7 @@ namespace Interfaz.Mantenimientos
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+#endregion
     }
 }
