@@ -38,16 +38,16 @@
             this.tbcInformacion = new System.Windows.Forms.TabControl();
             this.tbpLista = new System.Windows.Forms.TabPage();
             this.ltvInformacion = new System.Windows.Forms.ListView();
-            this.colIdEstadoSala = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColDescripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdPelícula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colNombrePelicula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbpInformacion = new System.Windows.Forms.TabPage();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.gboDescripcion = new System.Windows.Forms.GroupBox();
             this.txtTituloPelicula = new System.Windows.Forms.TextBox();
-            this.txtIdioma = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboIdioma = new System.Windows.Forms.ComboBox();
+            this.cboSubtitulos = new System.Windows.Forms.ComboBox();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.lblTituloPelícula = new System.Windows.Forms.Label();
             this.lblIdioma = new System.Windows.Forms.Label();
@@ -56,6 +56,9 @@
             this.txtNombrePelicula = new System.Windows.Forms.TextBox();
             this.lblNombrePelicula = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.colTituloPelicula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdSubtitulo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdioma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tspBarraMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,6 +88,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(69, 22);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -93,6 +97,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(78, 22);
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -101,6 +106,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(70, 22);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // panel1
             // 
@@ -148,25 +154,28 @@
             // 
             this.ltvInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ltvInformacion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colIdEstadoSala,
-            this.ColDescripcion});
+            this.colIdPelícula,
+            this.colNombrePelicula,
+            this.colTituloPelicula,
+            this.colIdSubtitulo,
+            this.colIdioma});
             this.ltvInformacion.GridLines = true;
             this.ltvInformacion.Location = new System.Drawing.Point(6, 6);
             this.ltvInformacion.Name = "ltvInformacion";
-            this.ltvInformacion.Size = new System.Drawing.Size(557, 340);
+            this.ltvInformacion.Size = new System.Drawing.Size(566, 301);
             this.ltvInformacion.TabIndex = 0;
             this.ltvInformacion.UseCompatibleStateImageBehavior = false;
             this.ltvInformacion.View = System.Windows.Forms.View.Details;
             // 
-            // colIdEstadoSala
+            // colIdPelícula
             // 
-            this.colIdEstadoSala.Text = "Identificador Estado Sala";
-            this.colIdEstadoSala.Width = 135;
+            this.colIdPelícula.Text = "Identificador Pelicula";
+            this.colIdPelícula.Width = 113;
             // 
-            // ColDescripcion
+            // colNombrePelicula
             // 
-            this.ColDescripcion.Text = "Descripcion";
-            this.ColDescripcion.Width = 417;
+            this.colNombrePelicula.Text = "Nombre Película";
+            this.colNombrePelicula.Width = 110;
             // 
             // tbpInformacion
             // 
@@ -192,6 +201,7 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAceptar
             // 
@@ -203,6 +213,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnRegresar
             // 
@@ -214,12 +225,13 @@
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // gboDescripcion
             // 
             this.gboDescripcion.Controls.Add(this.txtTituloPelicula);
-            this.gboDescripcion.Controls.Add(this.txtIdioma);
-            this.gboDescripcion.Controls.Add(this.comboBox1);
+            this.gboDescripcion.Controls.Add(this.cboIdioma);
+            this.gboDescripcion.Controls.Add(this.cboSubtitulos);
             this.gboDescripcion.Controls.Add(this.lblSubtitulo);
             this.gboDescripcion.Controls.Add(this.lblTituloPelícula);
             this.gboDescripcion.Controls.Add(this.lblIdioma);
@@ -229,7 +241,7 @@
             this.gboDescripcion.Controls.Add(this.lblNombrePelicula);
             this.gboDescripcion.Location = new System.Drawing.Point(15, 12);
             this.gboDescripcion.Name = "gboDescripcion";
-            this.gboDescripcion.Size = new System.Drawing.Size(557, 119);
+            this.gboDescripcion.Size = new System.Drawing.Size(551, 119);
             this.gboDescripcion.TabIndex = 5;
             this.gboDescripcion.TabStop = false;
             // 
@@ -238,29 +250,29 @@
             this.txtTituloPelicula.Location = new System.Drawing.Point(96, 64);
             this.txtTituloPelicula.MaxLength = 40;
             this.txtTituloPelicula.Name = "txtTituloPelicula";
-            this.txtTituloPelicula.Size = new System.Drawing.Size(255, 20);
+            this.txtTituloPelicula.Size = new System.Drawing.Size(240, 20);
             this.txtTituloPelicula.TabIndex = 9;
             // 
-            // txtIdioma
+            // cboIdioma
             // 
-            this.txtIdioma.FormattingEnabled = true;
-            this.txtIdioma.Location = new System.Drawing.Point(419, 64);
-            this.txtIdioma.Name = "txtIdioma";
-            this.txtIdioma.Size = new System.Drawing.Size(132, 21);
-            this.txtIdioma.TabIndex = 8;
+            this.cboIdioma.FormattingEnabled = true;
+            this.cboIdioma.Location = new System.Drawing.Point(409, 64);
+            this.cboIdioma.Name = "cboIdioma";
+            this.cboIdioma.Size = new System.Drawing.Size(132, 21);
+            this.cboIdioma.TabIndex = 8;
             // 
-            // comboBox1
+            // cboSubtitulos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(419, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cboSubtitulos.FormattingEnabled = true;
+            this.cboSubtitulos.Location = new System.Drawing.Point(409, 37);
+            this.cboSubtitulos.Name = "cboSubtitulos";
+            this.cboSubtitulos.Size = new System.Drawing.Size(132, 21);
+            this.cboSubtitulos.TabIndex = 7;
             // 
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Location = new System.Drawing.Point(357, 41);
+            this.lblSubtitulo.Location = new System.Drawing.Point(347, 41);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.Size = new System.Drawing.Size(56, 13);
             this.lblSubtitulo.TabIndex = 6;
@@ -278,7 +290,7 @@
             // lblIdioma
             // 
             this.lblIdioma.AutoSize = true;
-            this.lblIdioma.Location = new System.Drawing.Point(357, 67);
+            this.lblIdioma.Location = new System.Drawing.Point(347, 67);
             this.lblIdioma.Name = "lblIdioma";
             this.lblIdioma.Size = new System.Drawing.Size(41, 13);
             this.lblIdioma.TabIndex = 4;
@@ -309,7 +321,7 @@
             this.txtNombrePelicula.Location = new System.Drawing.Point(96, 38);
             this.txtNombrePelicula.MaxLength = 40;
             this.txtNombrePelicula.Name = "txtNombrePelicula";
-            this.txtNombrePelicula.Size = new System.Drawing.Size(255, 20);
+            this.txtNombrePelicula.Size = new System.Drawing.Size(240, 20);
             this.txtNombrePelicula.TabIndex = 0;
             // 
             // lblNombrePelicula
@@ -328,6 +340,21 @@
             this.statusStrip1.Size = new System.Drawing.Size(607, 22);
             this.statusStrip1.TabIndex = 24;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // colTituloPelicula
+            // 
+            this.colTituloPelicula.Text = "Titulo Película";
+            this.colTituloPelicula.Width = 123;
+            // 
+            // colIdSubtitulo
+            // 
+            this.colIdSubtitulo.Text = "Id Subtitulo";
+            this.colIdSubtitulo.Width = 111;
+            // 
+            // colIdioma
+            // 
+            this.colIdioma.Text = "Idioma";
+            this.colIdioma.Width = 105;
             // 
             // mPeliculas
             // 
@@ -366,8 +393,8 @@
         private System.Windows.Forms.TabControl tbcInformacion;
         private System.Windows.Forms.TabPage tbpLista;
         private System.Windows.Forms.ListView ltvInformacion;
-        private System.Windows.Forms.ColumnHeader colIdEstadoSala;
-        private System.Windows.Forms.ColumnHeader ColDescripcion;
+        private System.Windows.Forms.ColumnHeader colIdPelícula;
+        private System.Windows.Forms.ColumnHeader colNombrePelicula;
         private System.Windows.Forms.TabPage tbpInformacion;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAceptar;
@@ -379,10 +406,13 @@
         private System.Windows.Forms.Label lblNombrePelicula;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.TextBox txtTituloPelicula;
-        private System.Windows.Forms.ComboBox txtIdioma;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboIdioma;
+        private System.Windows.Forms.ComboBox cboSubtitulos;
         private System.Windows.Forms.Label lblSubtitulo;
         private System.Windows.Forms.Label lblTituloPelícula;
         private System.Windows.Forms.Label lblIdioma;
+        private System.Windows.Forms.ColumnHeader colTituloPelicula;
+        private System.Windows.Forms.ColumnHeader colIdSubtitulo;
+        private System.Windows.Forms.ColumnHeader colIdioma;
     }
 }

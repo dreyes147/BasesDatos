@@ -107,8 +107,6 @@ namespace Interfaz.Mantenimientos
             DataTable dtDatos = new DataTable();
             try
             {
-                OcultarTab();
-                vModo = "M";
                 foreach (ListViewItem vItem in vSeleccionados)
                 {
                     lblId.Text = vItem.SubItems[0].Text;
@@ -195,8 +193,8 @@ namespace Interfaz.Mantenimientos
                     OcultarTab();
                     vModo = "E";
                     Leer();
-                    gboDescripcion.Visible = true;
-                    gboDetalle.Visible = true;
+                    gboDescripcion.Enabled = false;
+                    gboDetalle.Enabled = false;
                 }
                 else
                 {
@@ -278,18 +276,20 @@ namespace Interfaz.Mantenimientos
                             gboDescripcion.Enabled = true;
                             break;
                     }
+
+                    MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarVista();
+                    ltvDetalle.Items.Clear();
+                    lblId.Text = string.Empty;
+                    cboPelicula.SelectedIndex = 1;
+                    cboSala.SelectedIndex = 1;
                 }
                 else
                 {
                     MessageBox.Show("Al menos debe agregar un detalle, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarVista();
-                ltvDetalle.Items.Clear();
-                lblId.Text = string.Empty;
-                cboPelicula.SelectedIndex = 1;
-                cboSala.SelectedIndex = 1;
+              
             }
             catch (Exception ex)
             {

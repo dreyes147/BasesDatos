@@ -237,16 +237,17 @@ namespace Interfaz.Mantenimientos
                             txtDescripcion.Enabled = true;
                             break;
                     }
+                    MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarVista();
+                    txtDescripcion.Text = string.Empty;
+                    lblId.Text = string.Empty;
                 }
                 else
                 {
                     MessageBox.Show("El campo descripción no puede contener un valor no valido, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarVista();
-                txtDescripcion.Text = string.Empty;
-                lblId.Text = string.Empty;
+               
             }
             catch (Exception ex)
             {

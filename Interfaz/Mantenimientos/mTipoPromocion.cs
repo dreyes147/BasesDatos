@@ -219,17 +219,18 @@ namespace Interfaz.Mantenimientos
                             txtDescripcion.Enabled = true;
                             break;
                     }
+                    MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarVista();
+                    txtDescripcion.Text = string.Empty;
+                    lblId.Text = string.Empty;
+                    txtValor.Text = string.Empty;
                 }
                 else
                 {
                     MessageBox.Show("El campo descripcióno valor no pueden contener un valor no valido, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarVista();
-                txtDescripcion.Text = string.Empty;
-                lblId.Text = string.Empty;
-                txtValor.Text = string.Empty;
+                
             }
             catch (Exception ex)
             {
