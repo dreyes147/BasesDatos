@@ -78,6 +78,12 @@
     <Compile Include="Mantenimientos\mAsientos.Designer.cs">
       <DependentUpon>mAsientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mCartelera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mCartelera.Designer.cs">
+      <DependentUpon>mCartelera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mEstadoAsiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mAsientos.resx">
       <DependentUpon>mAsientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mCartelera.resx">
+      <DependentUpon>mCartelera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mEstadoAsiento.resx">
       <DependentUpon>mEstadoAsiento.cs</DependentUpon>
