@@ -31,8 +31,8 @@
             this.tbcInformacion = new System.Windows.Forms.TabControl();
             this.tbpLista = new System.Windows.Forms.TabPage();
             this.ltvInformacion = new System.Windows.Forms.ListView();
-            this.colIdIdioma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColDescripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdCartelera = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdSala = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbpInformacion = new System.Windows.Forms.TabPage();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAgregarDetalle = new System.Windows.Forms.ToolStripButton();
             this.btnEliminarDetalle = new System.Windows.Forms.ToolStripButton();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.ltvDetalle = new System.Windows.Forms.ListView();
             this.cboSala = new System.Windows.Forms.ComboBox();
             this.dtpFechaFinalizacion = new System.Windows.Forms.DateTimePicker();
             this.lblFechaFinalizacion = new System.Windows.Forms.Label();
@@ -105,8 +105,8 @@
             // 
             this.ltvInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ltvInformacion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colIdIdioma,
-            this.ColDescripcion});
+            this.colIdCartelera,
+            this.colIdSala});
             this.ltvInformacion.GridLines = true;
             this.ltvInformacion.Location = new System.Drawing.Point(6, 6);
             this.ltvInformacion.Name = "ltvInformacion";
@@ -115,15 +115,15 @@
             this.ltvInformacion.UseCompatibleStateImageBehavior = false;
             this.ltvInformacion.View = System.Windows.Forms.View.Details;
             // 
-            // colIdIdioma
+            // colIdCartelera
             // 
-            this.colIdIdioma.Text = "Identificador Idioma";
-            this.colIdIdioma.Width = 114;
+            this.colIdCartelera.Text = "Identificador Cartelera";
+            this.colIdCartelera.Width = 264;
             // 
-            // ColDescripcion
+            // colIdSala
             // 
-            this.ColDescripcion.Text = "Descripcion";
-            this.ColDescripcion.Width = 119;
+            this.colIdSala.Text = "Identificador Sala Cine";
+            this.colIdSala.Width = 265;
             // 
             // tbpInformacion
             // 
@@ -149,6 +149,7 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAceptar
             // 
@@ -160,6 +161,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnRegresar
             // 
@@ -171,6 +173,7 @@
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // gboDescripcion
             // 
@@ -206,7 +209,7 @@
             // gboDetalle
             // 
             this.gboDetalle.Controls.Add(this.toolStrip1);
-            this.gboDetalle.Controls.Add(this.listView1);
+            this.gboDetalle.Controls.Add(this.ltvDetalle);
             this.gboDetalle.Location = new System.Drawing.Point(11, 148);
             this.gboDetalle.Name = "gboDetalle";
             this.gboDetalle.Size = new System.Drawing.Size(515, 235);
@@ -233,6 +236,7 @@
             this.btnAgregarDetalle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregarDetalle.Name = "btnAgregarDetalle";
             this.btnAgregarDetalle.Size = new System.Drawing.Size(23, 22);
+            this.btnAgregarDetalle.Click += new System.EventHandler(this.btnAgregarDetalle_Click);
             // 
             // btnEliminarDetalle
             // 
@@ -241,22 +245,24 @@
             this.btnEliminarDetalle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminarDetalle.Name = "btnEliminarDetalle";
             this.btnEliminarDetalle.Size = new System.Drawing.Size(23, 22);
+            this.btnEliminarDetalle.Click += new System.EventHandler(this.btnEliminarDetalle_Click);
             // 
-            // listView1
+            // ltvDetalle
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ltvDetalle.CheckBoxes = true;
+            this.ltvDetalle.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colIdPelicula,
             this.colFecha,
             this.colHora,
             this.colFechaEstreno,
             this.colFechaFinalizacion});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(3, 43);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(509, 186);
-            this.listView1.TabIndex = 16;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.ltvDetalle.GridLines = true;
+            this.ltvDetalle.Location = new System.Drawing.Point(3, 43);
+            this.ltvDetalle.Name = "ltvDetalle";
+            this.ltvDetalle.Size = new System.Drawing.Size(509, 186);
+            this.ltvDetalle.TabIndex = 16;
+            this.ltvDetalle.UseCompatibleStateImageBehavior = false;
+            this.ltvDetalle.View = System.Windows.Forms.View.Details;
             // 
             // cboSala
             // 
@@ -302,7 +308,8 @@
             // 
             // dtpHoraPelicula
             // 
-            this.dtpHoraPelicula.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraPelicula.CustomFormat = "HH:mm";
+            this.dtpHoraPelicula.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHoraPelicula.Location = new System.Drawing.Point(428, 92);
             this.dtpHoraPelicula.Name = "dtpHoraPelicula";
             this.dtpHoraPelicula.Size = new System.Drawing.Size(95, 20);
@@ -392,6 +399,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(69, 22);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -400,6 +408,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(78, 22);
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -408,6 +417,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(70, 22);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // statusStrip1
             // 
@@ -498,8 +508,8 @@
         private System.Windows.Forms.TabControl tbcInformacion;
         private System.Windows.Forms.TabPage tbpLista;
         private System.Windows.Forms.ListView ltvInformacion;
-        private System.Windows.Forms.ColumnHeader colIdIdioma;
-        private System.Windows.Forms.ColumnHeader ColDescripcion;
+        private System.Windows.Forms.ColumnHeader colIdCartelera;
+        private System.Windows.Forms.ColumnHeader colIdSala;
         private System.Windows.Forms.TabPage tbpInformacion;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAceptar;
@@ -519,7 +529,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnAgregarDetalle;
         private System.Windows.Forms.ToolStripButton btnEliminarDetalle;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView ltvDetalle;
         private System.Windows.Forms.ComboBox cboSala;
         private System.Windows.Forms.DateTimePicker dtpFechaFinalizacion;
         private System.Windows.Forms.Label lblFechaFinalizacion;

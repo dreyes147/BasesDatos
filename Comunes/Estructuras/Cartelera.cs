@@ -13,7 +13,6 @@ namespace Comunes.Estructuras
 
         private int vIdCartelera;
         private int vIdSala;
-        private int vIdTipoSala;
 
         #endregion
         #region Declaracion de Constructor
@@ -49,22 +48,6 @@ namespace Comunes.Estructuras
             }
         }
 
-        public int IdTipoSala
-        {
-            get
-            {
-                return vIdTipoSala;
-            }
-            set
-            {
-                vIdTipoSala = value;
-            }
-        }
-
-
         #endregion
-
-
-
     }
 }

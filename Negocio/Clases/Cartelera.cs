@@ -51,6 +51,46 @@ namespace Negocio.Clases
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        public void Insertar(Comunes.Estructuras.Cartelera pSala, List<Comunes.Estructuras.CarteleraDetalle> pDetalle)
+        {
+            Datos.Clases.CarteleraDetalle vDatosAsientos = new Datos.Clases.CarteleraDetalle();
+            int vReusltado = 0;
+            try
+            {
+                if (pSala != null && pDetalle != null)
+                {
+                    vDatos.Insertar(pSala);
+                    vReusltado = vDatos.SelecccionarId();
+                    foreach (Comunes.Estructuras.CarteleraDetalle vItem in pDetalle)
+                    {
+                        vItem.IdCartelera = vReusltado;
+                        vDatosAsientos.Insertar(vItem);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
+
+        #region Declaracion de Metodo Eliminar
+        public void Eliminar(List<Filtro> pFiltros)
+        {
+            try
+            {
+                if (pFiltros != null)
+                {
+                    vDatos.Eliminar(pFiltros);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
         #endregion
 
         #region Declaracion de Metodo Actualizar
@@ -68,6 +108,30 @@ namespace Negocio.Clases
                 throw new Exception(ex.Message, ex);
             }
         }
+        
+        public void Actualizar(Comunes.Estructuras.Cartelera pSala, List<Filtro> pFiltro, List<Comunes.Estructuras.CarteleraDetalle> pDetalle)
+        {
+            Datos.Clases.CarteleraDetalle vDatosAsientos = new Datos.Clases.CarteleraDetalle();
+            try
+            {
+                if (pSala != null && pDetalle != null)
+                {
+                    vDatos.Actualizar(pSala, pFiltro);
+                    vDatosAsientos.Eliminar(pFiltro);
+                    foreach (Comunes.Estructuras.CarteleraDetalle vItem in pDetalle)
+                    {
+                        vItem.IdCartelera = pSala.IdSala;
+                        vDatosAsientos.Insertar(vItem);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+
 
         public void Actualizar(List<Filtro> pFiltros, List<Campos> pCampos)
         {

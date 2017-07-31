@@ -103,8 +103,6 @@ namespace Interfaz.Mantenimientos
                 cboTipoSala.DataSource = vProxyTipoSala.Selecccionar(vFiltro);
                 cboTipoSala.DisplayMember = "DescripcionTipoSala";
                 cboTipoSala.ValueMember = "IdTipoSala";
-
-
             }
             catch (Exception ex)
             {
@@ -123,7 +121,6 @@ namespace Interfaz.Mantenimientos
                 List<Comunes.Estructuras.AsientoSalaCine> vAsientos = new List<Comunes.Estructuras.AsientoSalaCine> ();
                 try
                 {
-                  
                         foreach (ListViewItem vItem in vSeleccionados)
                         {
                             lblId.Text = vItem.SubItems[0].Text;

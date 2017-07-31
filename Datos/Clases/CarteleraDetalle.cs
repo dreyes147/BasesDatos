@@ -58,8 +58,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.CARTELERA_DETALLE (IdCartelera, IdPelicula, IdDetallle, FechaPelicula, HoraPelicula, FechaEstreno, FechaFinalizacion) ";
-                vSQL += "VALUES(" + pDatos.IdCartelera.ToString() + ", " + pDatos.IdPelicula.ToString() + ", " + pDatos.IdDetallle.ToString() + ", " + pDatos.FechaPelicula.ToString() + ", " + "'" + pDatos.HoraPelicula + "', " + pDatos.FechaEstreno.ToString() + ", " + pDatos.FechaFinalizacion.ToString() + "" + ")";
+                vSQL += "INSERT INTO dbo.CARTELERA_DETALLE (IdCartelera, IdPelicula, FechaPelicula, HoraPelicula, FechaEstreno, FechaFinalizacion) ";
+                vSQL += "VALUES(" + pDatos.IdCartelera.ToString() + ", " + pDatos.IdPelicula.ToString() + ", '" + string.Format("{0:yyyyMMdd}", pDatos.FechaPelicula.ToString()) + "', " + "'" + pDatos.HoraPelicula + "', '" + string.Format("{0:yyyyMMdd}", pDatos.FechaEstreno.ToString()) + "', '" + string.Format("{0:yyyyMMdd}", pDatos.FechaFinalizacion.ToString()) + "" + "')";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -99,7 +99,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.CARTELERA_DETALLE SET " + "IdCartelera = " + pDatos.IdCartelera.ToString() + ", " + "IdPelicula = " + pDatos.IdPelicula.ToString() + ", " + "IdDetallle = " + pDatos.IdDetallle.ToString() + ", " + "FechaPelicula = " + pDatos.FechaPelicula.ToString() + ", " + "HoraPelicula = " + "'" + pDatos.HoraPelicula + "', " + "FechaEstreno = " + pDatos.FechaEstreno.ToString() + ", " + "FechaFinalizacion = " + pDatos.FechaFinalizacion.ToString() + "";
+                vSQL += "UPDATE dbo.CARTELERA_DETALLE SET " + "IdCartelera = " + pDatos.IdCartelera.ToString() + ", " + "IdPelicula = " + pDatos.IdPelicula.ToString() + ", " + "FechaPelicula = " + string.Format("{0:yyyyMMdd}", pDatos.FechaPelicula.ToString()) + ", " + "HoraPelicula = " + "'" + pDatos.HoraPelicula + "', " + "FechaEstreno = " + string.Format("{0:yyyyMMdd}", pDatos.FechaEstreno.ToString()) + ", " + "FechaFinalizacion = " + string.Format("{0:yyyyMMdd}", pDatos.FechaFinalizacion.ToString()) + "";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);
@@ -137,7 +137,7 @@ namespace Datos.Clases
                     }
                     else if (vCampo.TipoDato.ToUpper() == "DATE")
                     {
-                        vQuery += vCampo.Campo + " =  '" + String.Format("yyyyMMdd", Convert.ToDateTime(vCampo.Valor)) + "'";
+                        vQuery += vCampo.Campo + " =  '" + String.Format("{0:yyyy/MM/dd}", Convert.ToDateTime(vCampo.Valor)) + "'";
                     }
                     else
                     {

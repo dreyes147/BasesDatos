@@ -45,6 +45,31 @@ namespace Datos.Clases
             }
             return dtResultado;
         }
+
+        public int SelecccionarId()
+        {
+            DataTable dtResultado = new DataTable("Datos");
+            string vSQL = string.Empty;
+            int vResultado = 0;
+            Conexion.Conexion vConnexion = new Conexion.Conexion();
+            try
+            {
+                vSQL += "SELECT ";
+                vSQL += "MAX(IdSala) ";
+                vSQL += "FROM dbo.SALA_CINE";
+
+                dtResultado = vConnexion.Seleccionar(vSQL, "BASEDATOS");
+                if (dtResultado.Rows.Count != 0)
+                {
+                    vResultado = Convert.ToInt32(dtResultado.Rows[0][0].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            return vResultado;
+        }
         #endregion
 
         #region Declaración de Insertar
@@ -54,8 +79,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.CARTELERA (IdCartelera, IdSala, IdTipoSala) ";
-                vSQL += "VALUES(" + pDatos.IdCartelera.ToString() + ", " + pDatos.IdSala.ToString() + ", " + pDatos.IdTipoSala.ToString() + "" + ")";
+                vSQL += "INSERT INTO dbo.CARTELERA ( IdSala) ";
+                vSQL += "VALUES(" + pDatos.IdSala.ToString() + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -95,7 +120,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.CARTELERA SET " + "IdCartelera = " + pDatos.IdCartelera.ToString() + ", " + "IdSala = " + pDatos.IdSala.ToString() + ", " + "IdTipoSala = " + pDatos.IdTipoSala.ToString() + "";
+                vSQL += "UPDATE dbo.CARTELERA SET " + "IdSala = " + pDatos.IdSala.ToString();
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);
