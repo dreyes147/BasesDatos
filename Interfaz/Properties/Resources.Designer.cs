@@ -144,6 +144,26 @@ namespace Interfaz.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap excavar {
+            get {
+                object obj = ResourceManager.GetObject("excavar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excavar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("excavar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flecha_atras_izquierda_de_angulo_de_regresar {
             get {
                 object obj = ResourceManager.GetObject("flecha-atras-izquierda-de-angulo-de-regresar", resourceCulture);
@@ -237,6 +257,16 @@ namespace Interfaz.Properties {
         internal static System.Drawing.Bitmap sillon__8_ {
             get {
                 object obj = ResourceManager.GetObject("sillon (8)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tractor {
+            get {
+                object obj = ResourceManager.GetObject("tractor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

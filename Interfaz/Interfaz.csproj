@@ -66,6 +66,12 @@
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\ListaPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\ListaPersona.Designer.cs">
+      <DependentUpon>ListaPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mAreaTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
     </Compile>
     <Compile Include="Mantenimientos\mCartelera.Designer.cs">
       <DependentUpon>mCartelera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mCliente.Designer.cs">
+      <DependentUpon>mCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\mEstadoAsiento.cs">
       <SubType>Form</SubType>
@@ -125,6 +137,12 @@
     </Compile>
     <Compile Include="Mantenimientos\mPeliculas.Designer.cs">
       <DependentUpon>mPeliculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mPersonalAdministrativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mPersonalAdministrativo.Designer.cs">
+      <DependentUpon>mPersonalAdministrativo.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\mPromocion.cs">
       <SubType>Form</SubType>
@@ -192,10 +210,31 @@
     <Compile Include="Mantenimientos\mTipoUsuario.Designer.cs">
       <DependentUpon>mTipoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mUsuarioSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mUsuarioSistema.Designer.cs">
+      <DependentUpon>mUsuarioSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\prReservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\prReservacion.Designer.cs">
+      <DependentUpon>prReservacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\ListaPersona.resx">
+      <DependentUpon>ListaPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mAreaTrabajo.resx">
       <DependentUpon>mAreaTrabajo.cs</DependentUpon>
@@ -205,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mCartelera.resx">
       <DependentUpon>mCartelera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mCliente.resx">
+      <DependentUpon>mCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mEstadoAsiento.resx">
       <DependentUpon>mEstadoAsiento.cs</DependentUpon>
@@ -226,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mPeliculas.resx">
       <DependentUpon>mPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mPersonalAdministrativo.resx">
+      <DependentUpon>mPersonalAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mPromocion.resx">
       <DependentUpon>mPromocion.cs</DependentUpon>
@@ -259,6 +304,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mTipoUsuario.resx">
       <DependentUpon>mTipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mUsuarioSistema.resx">
+      <DependentUpon>mUsuarioSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\prReservacion.resx">
+      <DependentUpon>prReservacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -370,6 +424,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sillon %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excavar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excavar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tractor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
