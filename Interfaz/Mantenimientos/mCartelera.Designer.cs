@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mCartelera));
             this.tbcInformacion = new System.Windows.Forms.TabControl();
             this.tbpLista = new System.Windows.Forms.TabPage();
             this.ltvInformacion = new System.Windows.Forms.ListView();
@@ -482,8 +483,9 @@
             this.Controls.Add(this.tspBarraMenu);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mCartelera";
-            this.Text = "mCartelera";
+            this.Text = "Cartelera";
             this.Load += new System.EventHandler(this.mCartelera_Load);
             this.tbcInformacion.ResumeLayout(false);
             this.tbpLista.ResumeLayout(false);

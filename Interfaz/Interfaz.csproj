@@ -120,6 +120,12 @@
     <Compile Include="Mantenimientos\mIdioma.Designer.cs">
       <DependentUpon>mIdioma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mPeliculas.Designer.cs">
+      <DependentUpon>mPeliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mSalaCine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mIdioma.resx">
       <DependentUpon>mIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mPeliculas.resx">
+      <DependentUpon>mPeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mSalaCine.resx">
       <DependentUpon>mSalaCine.cs</DependentUpon>
