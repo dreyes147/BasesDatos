@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Interfaz.Mantenimientos
 {
-    public partial class mCartelera : Form
+    public partial class mPromocion : Form
     {
-        public mCartelera()
+        public mPromocion()
         {
             InitializeComponent();
         }
@@ -42,7 +42,7 @@ namespace Interfaz.Mantenimientos
         private void CargarVista()
         {
             DataTable vResultados = new DataTable();
-            Negocio.Clases.Idioma vPrx = new Negocio.Clases.Idioma();
+            Negocio.Clases.Promocion vPrx = new Negocio.Clases.Promocion();
             List<Comunes.Filtros.Filtro> vFiltros = new List<Comunes.Filtros.Filtro>();
             ListViewItem vItem = new ListViewItem();
             try
@@ -51,8 +51,11 @@ namespace Interfaz.Mantenimientos
                 ltvInformacion.Items.Clear();
                 foreach (DataRow vRow in vResultados.Rows)
                 {
-                    vItem = ltvInformacion.Items.Add(vRow["IdIdioma"].ToString());
-                    vItem.SubItems.Add(vRow["DescripcionIdioma"].ToString());
+                    vItem = ltvInformacion.Items.Add(vRow["IdPromocion"].ToString());
+                    vItem.SubItems.Add(vRow["IdPelicula"].ToString());
+                    vItem.SubItems.Add(vRow["IdTipoPromocion"].ToString());
+                    vItem.SubItems.Add(String.Format("{0:yyyy/MM/dd}",vRow["FechaInicio"]));
+                    vItem.SubItems.Add(String.Format("{0:yyyy/MM/dd}",vRow["FechaFinal"]));
                 }
             }
             catch (Exception ex)
@@ -78,50 +81,59 @@ namespace Interfaz.Mantenimientos
             }
         }
 
-        private void CargarCombos() {
-            Negocio.Clases.SalaCine vNegocioSala = new Negocio.Clases.SalaCine();
-            Negocio.Clases.Pelicula vNegocioPelicula = new Negocio.Clases.Pelicula();
-            List<Comunes.Filtros.Filtro> vFiltros = new List<Comunes.Filtros.Filtro>();
+        private void CargarCombos()
+        {
+            Negocio.Clases.Pelicula vSubtitulos = new Negocio.Clases.Pelicula();
+            Negocio.Clases.TipoPromocion vIdiomas = new Negocio.Clases.TipoPromocion();
+            List<Comunes.Filtros.Filtro> vFiltro = new List<Comunes.Filtros.Filtro>();
             try
             {
-                cboPelicula.DataSource = vNegocioPelicula.Selecccionar(vFiltros);
+                cboPelicula.DataSource = vIdiomas.Selecccionar(vFiltro);
                 cboPelicula.DisplayMember = "NombrePelicula";
                 cboPelicula.ValueMember = "IdPelicula";
 
-                cboSala.DataSource = vNegocioSala.Selecccionar(vFiltros);
-                cboSala.DisplayMember = "IdSala";
-                cboSala.ValueMember = "IdSala"; 
+                cboTipoPromocion.DataSource = vSubtitulos.Selecccionar(vFiltro);
+                cboTipoPromocion.DisplayMember = "DescripcionTipoPromocion";
+                cboTipoPromocion.ValueMember = "IdTipoPromocion";
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
             }
-
         }
 
-        private void Leer() {
+        private Boolean Validar()
+        {
+            Boolean vResultado = false;
+            try
+            {
+                if (dtpFechaFinal.Value < dtpFechaInicio.Value)
+                {
+                    MessageBox.Show("La fecha final no puede ser menor a la fecha inicial, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    vResultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                vResultado = true;
+                throw new Exception(ex.Message, ex);
+            }
+            return vResultado;
+        }
+
+        private void Leer()
+        {
             ListView.SelectedListViewItemCollection vSeleccionados = this.ltvInformacion.SelectedItems;
-            Negocio.Clases.CarteleraDetalle vProxy = new Negocio.Clases.CarteleraDetalle();
-            List<Comunes.Filtros.Filtro> vFiltro = new List<Comunes.Filtros.Filtro>();
-           
             DataTable dtDatos = new DataTable();
             try
             {
                 foreach (ListViewItem vItem in vSeleccionados)
                 {
                     lblId.Text = vItem.SubItems[0].Text;
-                    cboSala.Text = vItem.SubItems[1].Text;
-                }
-
-                vFiltro.Add(new Comunes.Filtros.Filtro("IdCartelera", "=", Convert.ToInt32(lblId.Text)));
-                dtDatos = vProxy.Selecccionar(vFiltro);
-                foreach (DataRow vRow in dtDatos.Rows) {
-                    ListViewItem vItem = new ListViewItem();
-                    vItem = ltvInformacion.Items.Add(vRow["IdPelicula"].ToString());
-                    vItem.SubItems.Add(string.Format("{0:yyyy/MM/dd}", vRow["FechaPelicula"].ToString()));
-                    vItem.SubItems.Add(string.Format("{0:HH:mm}", vRow["HoraPelicula"].ToString()));
-                    vItem.SubItems.Add(string.Format("{0:yyyy/MM/dd}", vRow["FechaEstreno"].ToString()));
-                    vItem.SubItems.Add(string.Format("{0:yyyy/MM/dd}", vRow["FechaFinalizacion"].ToString()));
+                    cboPelicula.SelectedValue = vItem.SubItems[1].Text;
+                    cboTipoPromocion.SelectedValue = vItem.SubItems[2].Text;
+                    dtpFechaInicio.Value = Convert.ToDateTime(vItem.SubItems[3].Text);
+                    dtpFechaFinal.Value = Convert.ToDateTime(vItem.SubItems[4].Text);
                 }
             }
             catch (Exception ex)
@@ -133,8 +145,7 @@ namespace Interfaz.Mantenimientos
         #endregion
 
         #region Declaracion de Eventos
-
-        private void mCartelera_Load(object sender, EventArgs e)
+        private void mPromocion_Load(object sender, EventArgs e)
         {
             try
             {
@@ -194,7 +205,6 @@ namespace Interfaz.Mantenimientos
                     vModo = "E";
                     Leer();
                     gboDescripcion.Enabled = false;
-                    gboDetalle.Enabled = false;
                 }
                 else
                 {
@@ -221,40 +231,32 @@ namespace Interfaz.Mantenimientos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Comunes.Estructuras.Cartelera vEstructuraCartelera = new Comunes.Estructuras.Cartelera();
-            Comunes.Estructuras.CarteleraDetalle vEstructuraDetalle = new Comunes.Estructuras.CarteleraDetalle();
-            Negocio.Clases.Cartelera vNegocio = new Negocio.Clases.Cartelera();
-            Negocio.Clases.CarteleraDetalle vNegocioDetalle = new Negocio.Clases.CarteleraDetalle();
+            Comunes.Estructuras.Promocion vEstructura = new Comunes.Estructuras.Promocion();
+            Negocio.Clases.Promocion vNegocio = new Negocio.Clases.Promocion();
             List<Comunes.Filtros.Filtro> vFiltros = new List<Comunes.Filtros.Filtro>();
-            List<Comunes.Estructuras.CarteleraDetalle> vDetalles = new List<Comunes.Estructuras.CarteleraDetalle>();
             try
             {
-                if (ltvDetalle.Items.Count != 0)
+                if (Validar() == false)
                 {
-                    vEstructuraCartelera.IdSala = Convert.ToInt32(cboSala.SelectedValue.ToString());
-                    foreach (ListViewItem vItem in ltvDetalle.Items)
+
+                    vEstructura = new Comunes.Estructuras.Promocion()
                     {
-                        vEstructuraDetalle = new Comunes.Estructuras.CarteleraDetalle()
-                        {
-                            IdPelicula = Convert.ToInt32(vItem.SubItems[0].Text),
-                            FechaPelicula = Convert.ToDateTime(vItem.SubItems[1].Text),
-                            HoraPelicula = vItem.SubItems[2].Text,
-                            FechaEstreno = Convert.ToDateTime(vItem.SubItems[3].Text),
-                            FechaFinalizacion = Convert.ToDateTime(vItem.SubItems[4].Text)
-                        };
-                        vDetalles.Add(vEstructuraDetalle);
-                    }
+                        IdPelicula = Convert.ToInt32(cboPelicula.SelectedValue.ToString()),
+                        IdTipoPromocion = Convert.ToInt32(cboTipoPromocion.SelectedValue.ToString()),
+                        FechaFinal = dtpFechaFinal.Value,
+                        FechaInicio = dtpFechaInicio.Value
+                    };
 
                     switch (vModo)
                     {
                         case "A":
-                            vEstructuraCartelera.IdCartelera = 0;
-                            vNegocio.Insertar(vEstructuraCartelera, vDetalles);
+                            vEstructura.IdPromocion = 0;
+                            vNegocio.Insertar(vEstructura);
                             break;
                         case "M":
-                            vEstructuraCartelera.IdCartelera = Convert.ToInt32(lblId.Text);
-                            vFiltros.Add(new Comunes.Filtros.Filtro("IdCartelera", "=", Convert.ToInt32(lblId.Text)));
-                            vNegocio.Actualizar(vEstructuraCartelera, vFiltros, vDetalles);
+                            vEstructura.IdPromocion = Convert.ToInt32(lblId.Text);
+                            vFiltros.Add(new Comunes.Filtros.Filtro("IdPromocion", "=", Convert.ToInt32(lblId.Text)));
+                            vNegocio.Actualizar(vEstructura, vFiltros);
                             tbpLista.Parent = tbcInformacion;
                             tbcInformacion.SelectedTab = tbpLista;
                             tspBarraMenu.Visible = true;
@@ -264,9 +266,8 @@ namespace Interfaz.Mantenimientos
                             break;
 
                         default:
-                            vFiltros.Add(new Comunes.Filtros.Filtro("IdCartelera", "=", Convert.ToInt32(lblId.Text)));
+                            vFiltros.Add(new Comunes.Filtros.Filtro("IdPromocion", "=", Convert.ToInt32(lblId.Text)));
                             vNegocio.Eliminar(vFiltros);
-                            vNegocioDetalle.Eliminar(vFiltros);
                             tbpLista.Parent = tbcInformacion;
                             tbcInformacion.SelectedTab = tbpLista;
                             tspBarraMenu.Visible = true;
@@ -279,17 +280,11 @@ namespace Interfaz.Mantenimientos
 
                     MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarVista();
-                    ltvDetalle.Items.Clear();
                     lblId.Text = string.Empty;
+                    cboTipoPromocion.SelectedIndex = 0;
                     cboPelicula.SelectedIndex = 0;
-                    cboSala.SelectedIndex = 0;
-                }
-                else
-                {
-                    MessageBox.Show("Al menos debe agregar un detalle, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-              
             }
             catch (Exception ex)
             {
@@ -307,46 +302,6 @@ namespace Interfaz.Mantenimientos
                 tbpInformacion.Parent = null;
                 vModo = string.Empty;
                 CargarVista();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-        }
-
-        private void btnAgregarDetalle_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ListViewItem vItem = new ListViewItem();
-                vItem = ltvInformacion.Items.Add(cboPelicula.SelectedValue.ToString());
-                vItem.SubItems.Add(string.Format("{0:yyyy/MM/dd}", dtpFecha.Value));
-                vItem.SubItems.Add(string.Format("{0:HH:mm}", dtpHoraPelicula.Value));
-                vItem.SubItems.Add(string.Format("{0:yyyy/MM/dd}", dtpFechaFinalizacion.Value));
-                vItem.SubItems.Add(string.Format("{0:yyyy/MM/dd}", dtpFechaFinalizacion.Value));
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-        }
-
-        private void btnEliminarDetalle_Click(object sender, EventArgs e)
-        {
-            List<int> vItems = new List<int>();
-            try
-            {
-                foreach (ListViewItem vItem in ltvDetalle.CheckedItems)
-                {
-                    vItems.Add(vItem.Index);
-                }
-                vItems.Sort();
-                for (int i = vItems.Count - 1; i >= 0; i--)
-                {
-                    ltvDetalle.Items.RemoveAt(vItems[i]);
-                }
-
             }
             catch (Exception ex)
             {

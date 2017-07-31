@@ -56,8 +56,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.PELICULAS (IdPelicula, NombrePelicula, TituloPelicula, IdSubtitulo, IdIdioma) ";
-                vSQL += "VALUES(" + pDatos.IdPelicula.ToString() + ", " + "'" + pDatos.NombrePelicula + "', " + "'" + pDatos.TituloPelicula + "', " + pDatos.IdSubtitulo.ToString() + ", " + pDatos.IdIdioma.ToString() + "" + ")";
+                vSQL += "INSERT INTO dbo.PELICULAS (NombrePelicula, TituloPelicula, IdSubtitulo, IdIdioma) ";
+                vSQL += "VALUES(" + "'" + pDatos.NombrePelicula + "', " + "'" + pDatos.TituloPelicula + "', " + pDatos.IdSubtitulo.ToString() + ", " + pDatos.IdIdioma.ToString() + "" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.PELICULAS SET " + "IdPelicula = " + pDatos.IdPelicula.ToString() + ", " + "NombrePelicula = " + "'" + pDatos.NombrePelicula + "', " + "TituloPelicula = " + "'" + pDatos.TituloPelicula + "', " + "IdSubtitulo = " + pDatos.IdSubtitulo.ToString() + ", " + "IdIdioma = " + pDatos.IdIdioma.ToString() + "";
+                vSQL += "UPDATE dbo.PELICULAS SET " + ", " + "NombrePelicula = " + "'" + pDatos.NombrePelicula + "', " + "TituloPelicula = " + "'" + pDatos.TituloPelicula + "', " + "IdSubtitulo = " + pDatos.IdSubtitulo.ToString() + ", " + "IdIdioma = " + pDatos.IdIdioma.ToString() + "";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);

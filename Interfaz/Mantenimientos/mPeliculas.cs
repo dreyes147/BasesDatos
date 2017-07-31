@@ -16,6 +16,7 @@ namespace Interfaz.Mantenimientos
         {
             InitializeComponent();
         }
+
         #region Declaracion de Variables
 
         private string vModo = string.Empty;
@@ -29,6 +30,7 @@ namespace Interfaz.Mantenimientos
             try
             {
                 CargarVista();
+                CargarCombos();
                 tbpInformacion.Parent = null;
             }
             catch (Exception ex)
@@ -149,7 +151,17 @@ namespace Interfaz.Mantenimientos
 
         #region Declaracion de Eventos
 
-        #endregion
+        private void mPeliculas_Load(object sender, EventArgs e)
+        {
+            try
+            {
+               Inicializar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -275,10 +287,10 @@ namespace Interfaz.Mantenimientos
                     MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarVista();
                     lblId.Text = string.Empty;
-                    cboSubtitulos.SelectedIndex = 1;
-                    cboIdioma.SelectedIndex = 1;
+                    cboSubtitulos.SelectedIndex = 0;
+                    cboIdioma.SelectedIndex = 0;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -303,4 +315,8 @@ namespace Interfaz.Mantenimientos
             }
         }
     }
+
+    #endregion
+
+
 }

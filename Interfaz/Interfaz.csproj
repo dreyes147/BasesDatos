@@ -126,6 +126,12 @@
     <Compile Include="Mantenimientos\mPeliculas.Designer.cs">
       <DependentUpon>mPeliculas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mPromocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mPromocion.Designer.cs">
+      <DependentUpon>mPromocion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mSalaCine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mPeliculas.resx">
       <DependentUpon>mPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mPromocion.resx">
+      <DependentUpon>mPromocion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mSalaCine.resx">
       <DependentUpon>mSalaCine.cs</DependentUpon>

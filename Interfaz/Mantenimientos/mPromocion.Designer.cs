@@ -1,6 +1,6 @@
 ﻿namespace Interfaz.Mantenimientos
 {
-    partial class mPeliculas
+    partial class mPromocion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mPeliculas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mPromocion));
             this.tspBarraMenu = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
@@ -38,27 +38,27 @@
             this.tbcInformacion = new System.Windows.Forms.TabControl();
             this.tbpLista = new System.Windows.Forms.TabPage();
             this.ltvInformacion = new System.Windows.Forms.ListView();
-            this.colIdPelícula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNombrePelicula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdPromocion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdPelicula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIdTipoPromocion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colFechaInicio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colFechaFinal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbpInformacion = new System.Windows.Forms.TabPage();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.gboDescripcion = new System.Windows.Forms.GroupBox();
-            this.txtTituloPelicula = new System.Windows.Forms.TextBox();
-            this.cboIdioma = new System.Windows.Forms.ComboBox();
-            this.cboSubtitulos = new System.Windows.Forms.ComboBox();
-            this.lblSubtitulo = new System.Windows.Forms.Label();
-            this.lblTituloPelícula = new System.Windows.Forms.Label();
-            this.lblIdioma = new System.Windows.Forms.Label();
+            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.cboTipoPromocion = new System.Windows.Forms.ComboBox();
+            this.cboPelicula = new System.Windows.Forms.ComboBox();
+            this.lblIdPelicula = new System.Windows.Forms.Label();
+            this.lblFechaFinal = new System.Windows.Forms.Label();
+            this.lblTipoPromocion = new System.Windows.Forms.Label();
             this.lblIdentificador = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.txtNombrePelicula = new System.Windows.Forms.TextBox();
-            this.lblNombrePelicula = new System.Windows.Forms.Label();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.colTituloPelicula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colIdSubtitulo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colIdioma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tspBarraMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,8 +77,8 @@
             this.btnEliminar});
             this.tspBarraMenu.Location = new System.Drawing.Point(0, 66);
             this.tspBarraMenu.Name = "tspBarraMenu";
-            this.tspBarraMenu.Size = new System.Drawing.Size(607, 25);
-            this.tspBarraMenu.TabIndex = 23;
+            this.tspBarraMenu.Size = new System.Drawing.Size(602, 25);
+            this.tspBarraMenu.TabIndex = 27;
             this.tspBarraMenu.Text = "toolStrip1";
             // 
             // btnAgregar
@@ -116,8 +116,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(607, 66);
-            this.panel1.TabIndex = 22;
+            this.panel1.Size = new System.Drawing.Size(602, 66);
+            this.panel1.TabIndex = 26;
             // 
             // pictureBox1
             // 
@@ -133,11 +133,11 @@
             // 
             this.tbcInformacion.Controls.Add(this.tbpLista);
             this.tbcInformacion.Controls.Add(this.tbpInformacion);
-            this.tbcInformacion.Location = new System.Drawing.Point(12, 95);
+            this.tbcInformacion.Location = new System.Drawing.Point(9, 95);
             this.tbcInformacion.Name = "tbcInformacion";
             this.tbcInformacion.SelectedIndex = 0;
             this.tbcInformacion.Size = new System.Drawing.Size(586, 339);
-            this.tbcInformacion.TabIndex = 21;
+            this.tbcInformacion.TabIndex = 25;
             // 
             // tbpLista
             // 
@@ -154,11 +154,11 @@
             // 
             this.ltvInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ltvInformacion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colIdPelícula,
-            this.colNombrePelicula,
-            this.colTituloPelicula,
-            this.colIdSubtitulo,
-            this.colIdioma});
+            this.colIdPromocion,
+            this.colIdPelicula,
+            this.colIdTipoPromocion,
+            this.colFechaInicio,
+            this.colFechaFinal});
             this.ltvInformacion.GridLines = true;
             this.ltvInformacion.Location = new System.Drawing.Point(6, 6);
             this.ltvInformacion.Name = "ltvInformacion";
@@ -167,15 +167,30 @@
             this.ltvInformacion.UseCompatibleStateImageBehavior = false;
             this.ltvInformacion.View = System.Windows.Forms.View.Details;
             // 
-            // colIdPelícula
+            // colIdPromocion
             // 
-            this.colIdPelícula.Text = "Identificador Pelicula";
-            this.colIdPelícula.Width = 113;
+            this.colIdPromocion.Text = "Identificador Promoción";
+            this.colIdPromocion.Width = 125;
             // 
-            // colNombrePelicula
+            // colIdPelicula
             // 
-            this.colNombrePelicula.Text = "Nombre Película";
-            this.colNombrePelicula.Width = 110;
+            this.colIdPelicula.Text = "Id Película";
+            this.colIdPelicula.Width = 98;
+            // 
+            // colIdTipoPromocion
+            // 
+            this.colIdTipoPromocion.Text = "Id Tipo Promoción";
+            this.colIdTipoPromocion.Width = 123;
+            // 
+            // colFechaInicio
+            // 
+            this.colFechaInicio.Text = "FechaInicio";
+            this.colFechaInicio.Width = 111;
+            // 
+            // colFechaFinal
+            // 
+            this.colFechaFinal.Text = "Fecha Final";
+            this.colFechaFinal.Width = 105;
             // 
             // tbpInformacion
             // 
@@ -229,72 +244,80 @@
             // 
             // gboDescripcion
             // 
-            this.gboDescripcion.Controls.Add(this.txtTituloPelicula);
-            this.gboDescripcion.Controls.Add(this.cboIdioma);
-            this.gboDescripcion.Controls.Add(this.cboSubtitulos);
-            this.gboDescripcion.Controls.Add(this.lblSubtitulo);
-            this.gboDescripcion.Controls.Add(this.lblTituloPelícula);
-            this.gboDescripcion.Controls.Add(this.lblIdioma);
+            this.gboDescripcion.Controls.Add(this.dtpFechaFinal);
+            this.gboDescripcion.Controls.Add(this.dtpFechaInicio);
+            this.gboDescripcion.Controls.Add(this.cboTipoPromocion);
+            this.gboDescripcion.Controls.Add(this.cboPelicula);
+            this.gboDescripcion.Controls.Add(this.lblIdPelicula);
+            this.gboDescripcion.Controls.Add(this.lblFechaFinal);
+            this.gboDescripcion.Controls.Add(this.lblTipoPromocion);
             this.gboDescripcion.Controls.Add(this.lblIdentificador);
             this.gboDescripcion.Controls.Add(this.lblId);
-            this.gboDescripcion.Controls.Add(this.txtNombrePelicula);
-            this.gboDescripcion.Controls.Add(this.lblNombrePelicula);
+            this.gboDescripcion.Controls.Add(this.lblFechaInicio);
             this.gboDescripcion.Location = new System.Drawing.Point(15, 12);
             this.gboDescripcion.Name = "gboDescripcion";
             this.gboDescripcion.Size = new System.Drawing.Size(551, 119);
             this.gboDescripcion.TabIndex = 5;
             this.gboDescripcion.TabStop = false;
             // 
-            // txtTituloPelicula
+            // dtpFechaFinal
             // 
-            this.txtTituloPelicula.Location = new System.Drawing.Point(96, 64);
-            this.txtTituloPelicula.MaxLength = 40;
-            this.txtTituloPelicula.Name = "txtTituloPelicula";
-            this.txtTituloPelicula.Size = new System.Drawing.Size(240, 20);
-            this.txtTituloPelicula.TabIndex = 9;
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFinal.Location = new System.Drawing.Point(96, 67);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(120, 20);
+            this.dtpFechaFinal.TabIndex = 10;
             // 
-            // cboIdioma
+            // dtpFechaInicio
             // 
-            this.cboIdioma.FormattingEnabled = true;
-            this.cboIdioma.Location = new System.Drawing.Point(409, 64);
-            this.cboIdioma.Name = "cboIdioma";
-            this.cboIdioma.Size = new System.Drawing.Size(132, 21);
-            this.cboIdioma.TabIndex = 8;
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(96, 41);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(120, 20);
+            this.dtpFechaInicio.TabIndex = 9;
             // 
-            // cboSubtitulos
+            // cboTipoPromocion
             // 
-            this.cboSubtitulos.FormattingEnabled = true;
-            this.cboSubtitulos.Location = new System.Drawing.Point(409, 37);
-            this.cboSubtitulos.Name = "cboSubtitulos";
-            this.cboSubtitulos.Size = new System.Drawing.Size(132, 21);
-            this.cboSubtitulos.TabIndex = 7;
+            this.cboTipoPromocion.FormattingEnabled = true;
+            this.cboTipoPromocion.Location = new System.Drawing.Point(337, 65);
+            this.cboTipoPromocion.Name = "cboTipoPromocion";
+            this.cboTipoPromocion.Size = new System.Drawing.Size(200, 21);
+            this.cboTipoPromocion.TabIndex = 8;
             // 
-            // lblSubtitulo
+            // cboPelicula
             // 
-            this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Location = new System.Drawing.Point(347, 41);
-            this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(56, 13);
-            this.lblSubtitulo.TabIndex = 6;
-            this.lblSubtitulo.Text = "Subtitulos:";
+            this.cboPelicula.FormattingEnabled = true;
+            this.cboPelicula.Location = new System.Drawing.Point(337, 38);
+            this.cboPelicula.Name = "cboPelicula";
+            this.cboPelicula.Size = new System.Drawing.Size(200, 21);
+            this.cboPelicula.TabIndex = 7;
             // 
-            // lblTituloPelícula
+            // lblIdPelicula
             // 
-            this.lblTituloPelícula.AutoSize = true;
-            this.lblTituloPelícula.Location = new System.Drawing.Point(7, 67);
-            this.lblTituloPelícula.Name = "lblTituloPelícula";
-            this.lblTituloPelícula.Size = new System.Drawing.Size(78, 13);
-            this.lblTituloPelícula.TabIndex = 5;
-            this.lblTituloPelícula.Text = "Titulo Película:";
+            this.lblIdPelicula.AutoSize = true;
+            this.lblIdPelicula.Location = new System.Drawing.Point(285, 38);
+            this.lblIdPelicula.Name = "lblIdPelicula";
+            this.lblIdPelicula.Size = new System.Drawing.Size(46, 13);
+            this.lblIdPelicula.TabIndex = 6;
+            this.lblIdPelicula.Text = "Película";
             // 
-            // lblIdioma
+            // lblFechaFinal
             // 
-            this.lblIdioma.AutoSize = true;
-            this.lblIdioma.Location = new System.Drawing.Point(347, 67);
-            this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(41, 13);
-            this.lblIdioma.TabIndex = 4;
-            this.lblIdioma.Text = "Idioma:";
+            this.lblFechaFinal.AutoSize = true;
+            this.lblFechaFinal.Location = new System.Drawing.Point(7, 67);
+            this.lblFechaFinal.Name = "lblFechaFinal";
+            this.lblFechaFinal.Size = new System.Drawing.Size(65, 13);
+            this.lblFechaFinal.TabIndex = 5;
+            this.lblFechaFinal.Text = "Fecha Final:";
+            // 
+            // lblTipoPromocion
+            // 
+            this.lblTipoPromocion.AutoSize = true;
+            this.lblTipoPromocion.Location = new System.Drawing.Point(247, 68);
+            this.lblTipoPromocion.Name = "lblTipoPromocion";
+            this.lblTipoPromocion.Size = new System.Drawing.Size(84, 13);
+            this.lblTipoPromocion.TabIndex = 4;
+            this.lblTipoPromocion.Text = "Tipo Promoción:";
             // 
             // lblIdentificador
             // 
@@ -316,59 +339,36 @@
             this.lblId.Text = "0";
             this.lblId.Visible = false;
             // 
-            // txtNombrePelicula
+            // lblFechaInicio
             // 
-            this.txtNombrePelicula.Location = new System.Drawing.Point(96, 38);
-            this.txtNombrePelicula.MaxLength = 40;
-            this.txtNombrePelicula.Name = "txtNombrePelicula";
-            this.txtNombrePelicula.Size = new System.Drawing.Size(240, 20);
-            this.txtNombrePelicula.TabIndex = 0;
-            // 
-            // lblNombrePelicula
-            // 
-            this.lblNombrePelicula.AutoSize = true;
-            this.lblNombrePelicula.Location = new System.Drawing.Point(7, 41);
-            this.lblNombrePelicula.Name = "lblNombrePelicula";
-            this.lblNombrePelicula.Size = new System.Drawing.Size(83, 13);
-            this.lblNombrePelicula.TabIndex = 1;
-            this.lblNombrePelicula.Text = "Nombre Pelíula:";
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(7, 41);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(68, 13);
+            this.lblFechaInicio.TabIndex = 1;
+            this.lblFechaInicio.Text = "Fecha Inicio:";
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 438);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 443);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(607, 22);
-            this.statusStrip1.TabIndex = 24;
+            this.statusStrip1.Size = new System.Drawing.Size(602, 22);
+            this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // colTituloPelicula
-            // 
-            this.colTituloPelicula.Text = "Titulo Película";
-            this.colTituloPelicula.Width = 123;
-            // 
-            // colIdSubtitulo
-            // 
-            this.colIdSubtitulo.Text = "Id Subtitulo";
-            this.colIdSubtitulo.Width = 111;
-            // 
-            // colIdioma
-            // 
-            this.colIdioma.Text = "Idioma";
-            this.colIdioma.Width = 105;
-            // 
-            // mPeliculas
+            // mPromocion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 460);
+            this.ClientSize = new System.Drawing.Size(602, 465);
             this.Controls.Add(this.tspBarraMenu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbcInformacion);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "mPeliculas";
-            this.Text = "Peliculas";
-            this.Load += new System.EventHandler(this.mPeliculas_Load);
+            this.Name = "mPromocion";
+            this.Text = "Promocion";
+            this.Load += new System.EventHandler(this.mPromocion_Load);
             this.tspBarraMenu.ResumeLayout(false);
             this.tspBarraMenu.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -394,26 +394,26 @@
         private System.Windows.Forms.TabControl tbcInformacion;
         private System.Windows.Forms.TabPage tbpLista;
         private System.Windows.Forms.ListView ltvInformacion;
-        private System.Windows.Forms.ColumnHeader colIdPelícula;
-        private System.Windows.Forms.ColumnHeader colNombrePelicula;
+        private System.Windows.Forms.ColumnHeader colIdPromocion;
+        private System.Windows.Forms.ColumnHeader colIdPelicula;
+        private System.Windows.Forms.ColumnHeader colIdTipoPromocion;
+        private System.Windows.Forms.ColumnHeader colFechaInicio;
+        private System.Windows.Forms.ColumnHeader colFechaFinal;
         private System.Windows.Forms.TabPage tbpInformacion;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.GroupBox gboDescripcion;
+        private System.Windows.Forms.ComboBox cboTipoPromocion;
+        private System.Windows.Forms.ComboBox cboPelicula;
+        private System.Windows.Forms.Label lblIdPelicula;
+        private System.Windows.Forms.Label lblFechaFinal;
+        private System.Windows.Forms.Label lblTipoPromocion;
         private System.Windows.Forms.Label lblIdentificador;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox txtNombrePelicula;
-        private System.Windows.Forms.Label lblNombrePelicula;
+        private System.Windows.Forms.Label lblFechaInicio;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.TextBox txtTituloPelicula;
-        private System.Windows.Forms.ComboBox cboIdioma;
-        private System.Windows.Forms.ComboBox cboSubtitulos;
-        private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Label lblTituloPelícula;
-        private System.Windows.Forms.Label lblIdioma;
-        private System.Windows.Forms.ColumnHeader colTituloPelicula;
-        private System.Windows.Forms.ColumnHeader colIdSubtitulo;
-        private System.Windows.Forms.ColumnHeader colIdioma;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinal;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
     }
 }

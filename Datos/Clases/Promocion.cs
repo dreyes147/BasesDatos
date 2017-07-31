@@ -55,8 +55,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.PROMOCION (IdPromocion, IdPelicula, IdTipoPromocion, FechaInicio, FechaFinal) ";
-                vSQL += "VALUES(" + pDatos.IdPromocion.ToString() + ", " + pDatos.IdPelicula.ToString() + ", " + pDatos.IdTipoPromocion.ToString() + ", " + pDatos.FechaInicio.ToString() + ", " + pDatos.FechaFinal.ToString() + "" + ")";
+                vSQL += "INSERT INTO dbo.PROMOCION ( IdPelicula, IdTipoPromocion, FechaInicio, FechaFinal) ";
+                vSQL += "VALUES(" + pDatos.IdPelicula.ToString() + ", " + pDatos.IdTipoPromocion.ToString() + ", '" + String.Format("{0:yyyyMMdd}", pDatos.FechaInicio) + "', '" + String.Format("{0:yyyyMMdd}", pDatos.FechaFinal) + "" + "')";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -96,7 +96,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.PROMOCION SET " + "IdPromocion = " + pDatos.IdPromocion.ToString() + ", " + "IdPelicula = " + pDatos.IdPelicula.ToString() + ", " + "IdTipoPromocion = " + pDatos.IdTipoPromocion.ToString() + ", " + "FechaInicio = " + pDatos.FechaInicio.ToString() + ", " + "FechaFinal = " + pDatos.FechaFinal.ToString() + "";
+                vSQL += "UPDATE dbo.PROMOCION SET " + "IdPelicula = " + pDatos.IdPelicula.ToString() + ", " + "IdTipoPromocion = " + pDatos.IdTipoPromocion.ToString() + ", " + "FechaInicio = '" + String.Format("{0:yyyyMMdd}", pDatos.FechaInicio) + "', " + "FechaFinal = '" + String.Format("{0:yyyyMMdd}", pDatos.FechaFinal) + "'";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);
@@ -134,7 +134,7 @@ namespace Datos.Clases
                     }
                     else if (vCampo.TipoDato.ToUpper() == "DATE")
                     {
-                        vQuery += vCampo.Campo + " =  '" + String.Format("yyyyMMdd", Convert.ToDateTime(vCampo.Valor)) + "'";
+                        vQuery += vCampo.Campo + " =  '" + String.Format("{0:yyyyMMdd}", Convert.ToDateTime(vCampo.Valor)) + "'";
                     }
                     else
                     {
