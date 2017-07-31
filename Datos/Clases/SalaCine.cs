@@ -47,6 +47,30 @@ namespace Datos.Clases
             }
             return dtResultado;
         }
+
+        public int SelecccionarId()
+        {
+            DataTable dtResultado = new DataTable("Datos");
+            string vSQL = string.Empty;
+            int vResultado = 0;
+            Conexion.Conexion vConnexion = new Conexion.Conexion();
+            try
+            {
+                vSQL += "SELECT ";
+                vSQL += "MAX(IdSala) ";
+                vSQL += "FROM dbo.SALA_CINE";
+               
+                dtResultado = vConnexion.Seleccionar(vSQL, "BASEDATOS");
+                if (dtResultado.Rows.Count != 0) {
+                    vResultado = Convert.ToInt32(dtResultado.Rows[0][0].ToString());    
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            return vResultado;
+        }
         #endregion
 
         #region Declaración de Insertar
@@ -56,8 +80,8 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "INSERT INTO dbo.SALA_CINE (IdSala, CantidadAsientos, IdEstadoSala, IdTipoSala, IdTipoProyeccion, PrecioEntrada) ";
-                vSQL += "VALUES(" + pDatos.IdSala.ToString() + ", " + pDatos.CantidadAsientos.ToString() + ", " + pDatos.IdEstadoSala.ToString() + ", " + pDatos.IdTipoSala.ToString() + ", " + pDatos.IdTipoProyeccion.ToString() + ", " + pDatos.PrecioEntrada.ToString() + "" + ")";
+                vSQL += "INSERT INTO dbo.SALA_CINE ( CantidadAsientos, IdEstadoSala, IdTipoSala, IdTipoProyeccion, PrecioEntrada) ";
+                vSQL += "VALUES(" + pDatos.CantidadAsientos.ToString() + ", " + pDatos.IdEstadoSala.ToString() + ", " + pDatos.IdTipoSala.ToString() + ", " + pDatos.IdTipoProyeccion.ToString() + ", " + pDatos.PrecioEntrada.ToString() + "" + ")";
                 vConnexion.Ejecutar(vSQL, "BASEDATOS");
             }
             catch (Exception ex)
@@ -97,7 +121,7 @@ namespace Datos.Clases
             Conexion.Conexion vConnexion = new Conexion.Conexion();
             try
             {
-                vSQL += "UPDATE dbo.SALA_CINE SET " + "IdSala = " + pDatos.IdSala.ToString() + ", " + "CantidadAsientos = " + pDatos.CantidadAsientos.ToString() + ", " + "IdEstadoSala = " + pDatos.IdEstadoSala.ToString() + ", " + "IdTipoSala = " + pDatos.IdTipoSala.ToString() + ", " + "IdTipoProyeccion = " + pDatos.IdTipoProyeccion.ToString() + ", " + "PrecioEntrada = " + pDatos.PrecioEntrada.ToString() + "";
+                vSQL += "UPDATE dbo.SALA_CINE SET " + "CantidadAsientos = " + pDatos.CantidadAsientos.ToString() + ", " + "IdEstadoSala = " + pDatos.IdEstadoSala.ToString() + ", " + "IdTipoSala = " + pDatos.IdTipoSala.ToString() + ", " + "IdTipoProyeccion = " + pDatos.IdTipoProyeccion.ToString() + ", " + "PrecioEntrada = " + pDatos.PrecioEntrada.ToString() + "";
                 if (pFiltro != null)
                 {
                     vSQL += vFiltros.CrearWhere(pFiltro);

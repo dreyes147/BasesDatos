@@ -51,6 +51,45 @@ namespace Negocio.Clases
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        public void Insertar(Comunes.Estructuras.SalaCine pSala, List<Comunes.Estructuras.AsientoSalaCine> pAsientos)
+        {
+            Datos.Clases.AsientoSalaCine vDatosAsientos = new Datos.Clases.AsientoSalaCine();
+            int vReusltado = 0;
+            try
+            {
+                if (pSala != null && pAsientos != null)
+                {
+                    vDatos.Insertar(pSala);
+                    vReusltado = vDatos.SelecccionarId();
+                    foreach (Comunes.Estructuras.AsientoSalaCine vItem in pAsientos) {
+                        vItem.IdSala = vReusltado;
+                        vDatosAsientos.Insertar(vItem);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
+
+        #region Declaracion de Metodo Eliminar
+        public void Eliminar(List<Filtro> pFiltros)
+        {
+            try
+            {
+                if (pFiltros != null)
+                {
+                    vDatos.Eliminar(pFiltros);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
         #endregion
 
         #region Declaracion de Metodo Actualizar
@@ -68,6 +107,31 @@ namespace Negocio.Clases
                 throw new Exception(ex.Message, ex);
             }
         }
+
+
+        public void Actualizar(Comunes.Estructuras.SalaCine pSala, List<Filtro> pFiltro, List<Comunes.Estructuras.AsientoSalaCine> pAsientos)
+        {
+            Datos.Clases.AsientoSalaCine vDatosAsientos = new Datos.Clases.AsientoSalaCine();
+            try
+            {
+                if (pSala != null && pAsientos != null)
+                {
+                    vDatos.Actualizar(pSala, pFiltro);
+                    vDatosAsientos.Eliminar(pFiltro);
+                    foreach (Comunes.Estructuras.AsientoSalaCine vItem in pAsientos)
+                    {
+                        vItem.IdSala = pSala.IdSala;
+                        vDatosAsientos.Insertar(vItem);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+
 
         public void Actualizar(List<Filtro> pFiltros, List<Campos> pCampos)
         {

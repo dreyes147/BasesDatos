@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Estructuras\AreaTrabajo.cs" />
-    <Compile Include="Estructuras\arteleraDetalle.cs" />
+    <Compile Include="Estructuras\CarteleraDetalle.cs" />
     <Compile Include="Estructuras\AsientoSalaCine.cs" />
     <Compile Include="Estructuras\Cartelera.cs" />
     <Compile Include="Estructuras\Cliente.cs" />

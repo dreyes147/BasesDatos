@@ -97,7 +97,7 @@
             this.cboEstadoAsiento.Location = new System.Drawing.Point(130, 66);
             this.cboEstadoAsiento.Name = "cboEstadoAsiento";
             this.cboEstadoAsiento.Size = new System.Drawing.Size(219, 21);
-            this.cboEstadoAsiento.TabIndex = 18;
+            this.cboEstadoAsiento.TabIndex = 1;
             // 
             // cboTipoAsiento
             // 
@@ -105,7 +105,7 @@
             this.cboTipoAsiento.Location = new System.Drawing.Point(130, 39);
             this.cboTipoAsiento.Name = "cboTipoAsiento";
             this.cboTipoAsiento.Size = new System.Drawing.Size(219, 21);
-            this.cboTipoAsiento.TabIndex = 17;
+            this.cboTipoAsiento.TabIndex = 0;
             // 
             // gboInformacion
             // 
@@ -117,7 +117,7 @@
             this.gboInformacion.Location = new System.Drawing.Point(12, 72);
             this.gboInformacion.Name = "gboInformacion";
             this.gboInformacion.Size = new System.Drawing.Size(390, 143);
-            this.gboInformacion.TabIndex = 21;
+            this.gboInformacion.TabIndex = 1;
             this.gboInformacion.TabStop = false;
             // 
             // btnRegresar
@@ -126,7 +126,7 @@
             this.btnRegresar.Location = new System.Drawing.Point(212, 105);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegresar.TabIndex = 23;
+            this.btnRegresar.TabIndex = 2;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegresar.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(143, 177);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 24);
-            this.btnAceptar.TabIndex = 22;
+            this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = true;

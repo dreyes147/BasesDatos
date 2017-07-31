@@ -47,44 +47,44 @@
             this.colTipoProyeccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colPrecioEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbpInformacion = new System.Windows.Forms.TabPage();
-            this.gboDescripcion = new System.Windows.Forms.GroupBox();
-            this.btnRegresar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.gboBotones = new System.Windows.Forms.GroupBox();
             this.btnAsignarAsientos = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.gboDescripcion = new System.Windows.Forms.GroupBox();
             this.lblEstadoSala = new System.Windows.Forms.Label();
             this.lblTipoSala = new System.Windows.Forms.Label();
             this.lblTipoProyeccion = new System.Windows.Forms.Label();
             this.cboTipoProyeccion = new System.Windows.Forms.ComboBox();
             this.cboEstadoSala = new System.Windows.Forms.ComboBox();
-            this.cboTipoSala = new System.Windows.Forms.ComboBox();
             this.lblIdentificador = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.txtPrecioEntrada = new System.Windows.Forms.TextBox();
             this.lblPrecioEntrada = new System.Windows.Forms.Label();
             this.tbpAsientos = new System.Windows.Forms.TabPage();
-            this.btnRegresarAsiento = new System.Windows.Forms.Button();
+            this.gboSala = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPantalla = new System.Windows.Forms.Label();
-            this.btnAsignarAsiento = new System.Windows.Forms.Button();
             this.ltvAsientos = new System.Windows.Forms.ListView();
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.gboBotones = new System.Windows.Forms.GroupBox();
-            this.gboSala = new System.Windows.Forms.GroupBox();
+            this.btnRegresarAsiento = new System.Windows.Forms.Button();
+            this.btnAsignarAsiento = new System.Windows.Forms.Button();
+            this.cboTipoSala = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tspBarraMenu.SuspendLayout();
             this.tbcInformacion.SuspendLayout();
             this.tbpLista.SuspendLayout();
             this.tbpInformacion.SuspendLayout();
+            this.gboBotones.SuspendLayout();
             this.gboDescripcion.SuspendLayout();
             this.tbpAsientos.SuspendLayout();
+            this.gboSala.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Menu.SuspendLayout();
-            this.gboBotones.SuspendLayout();
-            this.gboSala.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -238,23 +238,29 @@
             this.tbpInformacion.Text = "Información";
             this.tbpInformacion.UseVisualStyleBackColor = true;
             // 
-            // gboDescripcion
+            // gboBotones
             // 
-            this.gboDescripcion.Controls.Add(this.lblEstadoSala);
-            this.gboDescripcion.Controls.Add(this.lblTipoSala);
-            this.gboDescripcion.Controls.Add(this.lblTipoProyeccion);
-            this.gboDescripcion.Controls.Add(this.cboTipoProyeccion);
-            this.gboDescripcion.Controls.Add(this.cboEstadoSala);
-            this.gboDescripcion.Controls.Add(this.cboTipoSala);
-            this.gboDescripcion.Controls.Add(this.lblIdentificador);
-            this.gboDescripcion.Controls.Add(this.lblId);
-            this.gboDescripcion.Controls.Add(this.txtPrecioEntrada);
-            this.gboDescripcion.Controls.Add(this.lblPrecioEntrada);
-            this.gboDescripcion.Location = new System.Drawing.Point(6, 12);
-            this.gboDescripcion.Name = "gboDescripcion";
-            this.gboDescripcion.Size = new System.Drawing.Size(878, 137);
-            this.gboDescripcion.TabIndex = 5;
-            this.gboDescripcion.TabStop = false;
+            this.gboBotones.Controls.Add(this.btnAsignarAsientos);
+            this.gboBotones.Controls.Add(this.btnRegresar);
+            this.gboBotones.Controls.Add(this.btnSalir);
+            this.gboBotones.Controls.Add(this.btnAceptar);
+            this.gboBotones.Location = new System.Drawing.Point(6, 149);
+            this.gboBotones.Name = "gboBotones";
+            this.gboBotones.Size = new System.Drawing.Size(878, 93);
+            this.gboBotones.TabIndex = 9;
+            this.gboBotones.TabStop = false;
+            // 
+            // btnAsignarAsientos
+            // 
+            this.btnAsignarAsientos.Image = global::Interfaz.Properties.Resources.sillon__8_;
+            this.btnAsignarAsientos.Location = new System.Drawing.Point(706, 19);
+            this.btnAsignarAsientos.Name = "btnAsignarAsientos";
+            this.btnAsignarAsientos.Size = new System.Drawing.Size(161, 23);
+            this.btnAsignarAsientos.TabIndex = 8;
+            this.btnAsignarAsientos.Text = "Asignar Asientos";
+            this.btnAsignarAsientos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAsignarAsientos.UseVisualStyleBackColor = true;
+            this.btnAsignarAsientos.Click += new System.EventHandler(this.btnAsignarAsientos_Click);
             // 
             // btnRegresar
             // 
@@ -268,18 +274,6 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Image = global::Interfaz.Properties.Resources.comprobado;
-            this.btnAceptar.Location = new System.Drawing.Point(706, 48);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 24);
-            this.btnAceptar.TabIndex = 4;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // btnSalir
             // 
             this.btnSalir.Image = global::Interfaz.Properties.Resources.logout__1_;
@@ -292,17 +286,35 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnAsignarAsientos
+            // btnAceptar
             // 
-            this.btnAsignarAsientos.Image = global::Interfaz.Properties.Resources.sillon__8_;
-            this.btnAsignarAsientos.Location = new System.Drawing.Point(706, 19);
-            this.btnAsignarAsientos.Name = "btnAsignarAsientos";
-            this.btnAsignarAsientos.Size = new System.Drawing.Size(161, 23);
-            this.btnAsignarAsientos.TabIndex = 8;
-            this.btnAsignarAsientos.Text = "Asignar Asientos";
-            this.btnAsignarAsientos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAsignarAsientos.UseVisualStyleBackColor = true;
-            this.btnAsignarAsientos.Click += new System.EventHandler(this.btnAsignarAsientos_Click);
+            this.btnAceptar.Image = global::Interfaz.Properties.Resources.comprobado;
+            this.btnAceptar.Location = new System.Drawing.Point(706, 48);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 24);
+            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // gboDescripcion
+            // 
+            this.gboDescripcion.Controls.Add(this.cboTipoSala);
+            this.gboDescripcion.Controls.Add(this.lblEstadoSala);
+            this.gboDescripcion.Controls.Add(this.lblTipoSala);
+            this.gboDescripcion.Controls.Add(this.lblTipoProyeccion);
+            this.gboDescripcion.Controls.Add(this.cboTipoProyeccion);
+            this.gboDescripcion.Controls.Add(this.cboEstadoSala);
+            this.gboDescripcion.Controls.Add(this.lblIdentificador);
+            this.gboDescripcion.Controls.Add(this.lblId);
+            this.gboDescripcion.Controls.Add(this.txtPrecioEntrada);
+            this.gboDescripcion.Controls.Add(this.lblPrecioEntrada);
+            this.gboDescripcion.Location = new System.Drawing.Point(6, 12);
+            this.gboDescripcion.Name = "gboDescripcion";
+            this.gboDescripcion.Size = new System.Drawing.Size(878, 137);
+            this.gboDescripcion.TabIndex = 5;
+            this.gboDescripcion.TabStop = false;
             // 
             // lblEstadoSala
             // 
@@ -346,14 +358,6 @@
             this.cboEstadoSala.Name = "cboEstadoSala";
             this.cboEstadoSala.Size = new System.Drawing.Size(219, 21);
             this.cboEstadoSala.TabIndex = 12;
-            // 
-            // cboTipoSala
-            // 
-            this.cboTipoSala.FormattingEnabled = true;
-            this.cboTipoSala.Location = new System.Drawing.Point(131, 38);
-            this.cboTipoSala.Name = "cboTipoSala";
-            this.cboTipoSala.Size = new System.Drawing.Size(219, 21);
-            this.cboTipoSala.TabIndex = 11;
             // 
             // lblIdentificador
             // 
@@ -407,17 +411,15 @@
             this.tbpAsientos.Text = "Asientos";
             this.tbpAsientos.UseVisualStyleBackColor = true;
             // 
-            // btnRegresarAsiento
+            // gboSala
             // 
-            this.btnRegresarAsiento.Image = global::Interfaz.Properties.Resources.flecha_atras_izquierda_de_angulo_de_regresar;
-            this.btnRegresarAsiento.Location = new System.Drawing.Point(419, 485);
-            this.btnRegresarAsiento.Name = "btnRegresarAsiento";
-            this.btnRegresarAsiento.Size = new System.Drawing.Size(125, 31);
-            this.btnRegresarAsiento.TabIndex = 3;
-            this.btnRegresarAsiento.Text = "Regresar";
-            this.btnRegresarAsiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresarAsiento.UseVisualStyleBackColor = true;
-            this.btnRegresarAsiento.Click += new System.EventHandler(this.btnRegresarAsiento_Click);
+            this.gboSala.Controls.Add(this.panel2);
+            this.gboSala.Controls.Add(this.ltvAsientos);
+            this.gboSala.Location = new System.Drawing.Point(6, 6);
+            this.gboSala.Name = "gboSala";
+            this.gboSala.Size = new System.Drawing.Size(878, 473);
+            this.gboSala.TabIndex = 4;
+            this.gboSala.TabStop = false;
             // 
             // panel2
             // 
@@ -436,18 +438,6 @@
             this.lblPantalla.Size = new System.Drawing.Size(45, 13);
             this.lblPantalla.TabIndex = 0;
             this.lblPantalla.Text = "Pantalla";
-            // 
-            // btnAsignarAsiento
-            // 
-            this.btnAsignarAsiento.Image = global::Interfaz.Properties.Resources.boton_de_suma;
-            this.btnAsignarAsiento.Location = new System.Drawing.Point(272, 485);
-            this.btnAsignarAsiento.Name = "btnAsignarAsiento";
-            this.btnAsignarAsiento.Size = new System.Drawing.Size(122, 31);
-            this.btnAsignarAsiento.TabIndex = 1;
-            this.btnAsignarAsiento.Text = "Agregar Asientos";
-            this.btnAsignarAsiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAsignarAsiento.UseVisualStyleBackColor = true;
-            this.btnAsignarAsiento.Click += new System.EventHandler(this.btnAsignarAsiento_Click);
             // 
             // ltvAsientos
             // 
@@ -485,27 +475,37 @@
             this.imageList.Images.SetKeyName(2, "sillon (1).png");
             this.imageList.Images.SetKeyName(3, "sillon.png");
             // 
-            // gboBotones
+            // btnRegresarAsiento
             // 
-            this.gboBotones.Controls.Add(this.btnAsignarAsientos);
-            this.gboBotones.Controls.Add(this.btnRegresar);
-            this.gboBotones.Controls.Add(this.btnSalir);
-            this.gboBotones.Controls.Add(this.btnAceptar);
-            this.gboBotones.Location = new System.Drawing.Point(6, 149);
-            this.gboBotones.Name = "gboBotones";
-            this.gboBotones.Size = new System.Drawing.Size(878, 93);
-            this.gboBotones.TabIndex = 9;
-            this.gboBotones.TabStop = false;
+            this.btnRegresarAsiento.Image = global::Interfaz.Properties.Resources.flecha_atras_izquierda_de_angulo_de_regresar;
+            this.btnRegresarAsiento.Location = new System.Drawing.Point(419, 485);
+            this.btnRegresarAsiento.Name = "btnRegresarAsiento";
+            this.btnRegresarAsiento.Size = new System.Drawing.Size(125, 31);
+            this.btnRegresarAsiento.TabIndex = 3;
+            this.btnRegresarAsiento.Text = "Regresar";
+            this.btnRegresarAsiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresarAsiento.UseVisualStyleBackColor = true;
+            this.btnRegresarAsiento.Click += new System.EventHandler(this.btnRegresarAsiento_Click);
             // 
-            // gboSala
+            // btnAsignarAsiento
             // 
-            this.gboSala.Controls.Add(this.panel2);
-            this.gboSala.Controls.Add(this.ltvAsientos);
-            this.gboSala.Location = new System.Drawing.Point(6, 6);
-            this.gboSala.Name = "gboSala";
-            this.gboSala.Size = new System.Drawing.Size(878, 473);
-            this.gboSala.TabIndex = 4;
-            this.gboSala.TabStop = false;
+            this.btnAsignarAsiento.Image = global::Interfaz.Properties.Resources.boton_de_suma;
+            this.btnAsignarAsiento.Location = new System.Drawing.Point(272, 485);
+            this.btnAsignarAsiento.Name = "btnAsignarAsiento";
+            this.btnAsignarAsiento.Size = new System.Drawing.Size(122, 31);
+            this.btnAsignarAsiento.TabIndex = 1;
+            this.btnAsignarAsiento.Text = "Agregar Asientos";
+            this.btnAsignarAsiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAsignarAsiento.UseVisualStyleBackColor = true;
+            this.btnAsignarAsiento.Click += new System.EventHandler(this.btnAsignarAsiento_Click);
+            // 
+            // cboTipoSala
+            // 
+            this.cboTipoSala.FormattingEnabled = true;
+            this.cboTipoSala.Location = new System.Drawing.Point(131, 38);
+            this.cboTipoSala.Name = "cboTipoSala";
+            this.cboTipoSala.Size = new System.Drawing.Size(219, 21);
+            this.cboTipoSala.TabIndex = 18;
             // 
             // mSalaCine
             // 
@@ -527,14 +527,14 @@
             this.tbcInformacion.ResumeLayout(false);
             this.tbpLista.ResumeLayout(false);
             this.tbpInformacion.ResumeLayout(false);
+            this.gboBotones.ResumeLayout(false);
             this.gboDescripcion.ResumeLayout(false);
             this.gboDescripcion.PerformLayout();
             this.tbpAsientos.ResumeLayout(false);
+            this.gboSala.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.Menu.ResumeLayout(false);
-            this.gboBotones.ResumeLayout(false);
-            this.gboSala.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,7 +576,6 @@
         private System.Windows.Forms.Label lblTipoProyeccion;
         private System.Windows.Forms.ComboBox cboTipoProyeccion;
         private System.Windows.Forms.ComboBox cboEstadoSala;
-        private System.Windows.Forms.ComboBox cboTipoSala;
         private System.Windows.Forms.TextBox txtPrecioEntrada;
         private System.Windows.Forms.Button btnRegresarAsiento;
         private System.Windows.Forms.ColumnHeader colIdEstadoSala;
@@ -585,5 +584,6 @@
         private System.Windows.Forms.ColumnHeader colPrecioEntrada;
         private System.Windows.Forms.GroupBox gboBotones;
         private System.Windows.Forms.GroupBox gboSala;
+        private System.Windows.Forms.ComboBox cboTipoSala;
     }
 }

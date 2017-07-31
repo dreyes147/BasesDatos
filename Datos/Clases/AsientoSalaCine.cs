@@ -31,7 +31,6 @@ namespace Datos.Clases
                 vSQL += "SELECT ";
                 vSQL += "IdNumeroAsiento ";
                 vSQL += ",IdSala ";
-                vSQL += ",IdTipoSala ";
                 vSQL += ",IdTipoAsiento ";
                 vSQL += ",IdEstadoAsiento ";
                 vSQL += "FROM dbo.ASIENTO_SALA_CINE";
@@ -46,6 +45,34 @@ namespace Datos.Clases
                 throw new Exception(ex.Message, ex);
             }
             return dtResultado;
+        }
+
+
+        public List<Comunes.Estructuras.AsientoSalaCine> SelecccionarLista(List<Filtro> pFiltros)
+        {
+            List<Comunes.Estructuras.AsientoSalaCine> vResultado = new List<Comunes.Estructuras.AsientoSalaCine>();
+            DataTable dtDatos = new DataTable();
+            try
+            {
+                dtDatos = Selecccionar(pFiltros);
+                foreach (DataRow vRow in dtDatos.Rows) {
+
+                    Comunes.Estructuras.AsientoSalaCine vEstructura = new Comunes.Estructuras.AsientoSalaCine()
+                    {
+                        IdEstadoAsiento = Convert.ToInt32(vRow["IdEstadoAsiento"]),
+                        IdSala = Convert.ToInt32(vRow["IdSala"]),
+                        IdTipoAsiento= Convert.ToInt32(vRow["IdTipoAsiento"]),
+                        IdNumeroAsiento = Convert.ToInt32(vRow["IdNumeroAsiento"]),
+                    };
+                    vResultado.Add(vEstructura);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            return vResultado;
         }
         #endregion
 

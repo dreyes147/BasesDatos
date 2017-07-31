@@ -34,6 +34,20 @@ namespace Negocio.Clases
             }
             return dtResultado;
         }
+
+        public List<Comunes.Estructuras.AsientoSalaCine> SelecccionarLista(List<Filtro> pFiltros)
+        {
+            List<Comunes.Estructuras.AsientoSalaCine> vResultado = new List<Comunes.Estructuras.AsientoSalaCine>();
+            try
+            {
+                vResultado = vDatos.SelecccionarLista(pFiltros);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            return vResultado;
+        }
         #endregion
 
         #region Declaracion de Metodo Insertar

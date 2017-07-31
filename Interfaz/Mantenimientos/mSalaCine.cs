@@ -103,6 +103,8 @@ namespace Interfaz.Mantenimientos
                 cboTipoSala.DataSource = vProxyTipoSala.Selecccionar(vFiltro);
                 cboTipoSala.DisplayMember = "DescripcionTipoSala";
                 cboTipoSala.ValueMember = "IdTipoSala";
+
+
             }
             catch (Exception ex)
             {
@@ -114,28 +116,35 @@ namespace Interfaz.Mantenimientos
         private void Leer() {
             try
             {
+                ListViewItem vAsiento = new ListViewItem();
+                Negocio.Clases.AsientoSalaCine vNegocioAsientos = new Negocio.Clases.AsientoSalaCine();
                 ListView.SelectedListViewItemCollection vSeleccionados = this.ltvInformacion.SelectedItems;
-
+                List<Comunes.Filtros.Filtro> vFiltros = new List<Comunes.Filtros.Filtro>();
+                List<Comunes.Estructuras.AsientoSalaCine> vAsientos = new List<Comunes.Estructuras.AsientoSalaCine> ();
                 try
                 {
-                    if (ltvInformacion.SelectedIndices.Count > 0)
-                    {
+                  
                         foreach (ListViewItem vItem in vSeleccionados)
                         {
                             lblId.Text = vItem.SubItems[0].Text;
-                            cboTipoSala.SelectedValue = vItem.SubItems[2].Text;
+                            cboEstadoSala.SelectedValue = vItem.SubItems[2].Text;
                             cboTipoSala.SelectedValue = vItem.SubItems[3].Text;
                             cboTipoProyeccion.SelectedValue = vItem.SubItems[4].Text;
                             txtPrecioEntrada.Text = vItem.SubItems[5].Text;
-                            cboTipoSala.SelectedValue = vItem.SubItems[2].Text;
                         }
+                        vFiltros.Add(new Comunes.Filtros.Filtro("IdSala", "=", Convert.ToInt32(lblId.Text)));
+                        vAsientos = vNegocioAsientos.SelecccionarLista(vFiltros);
+                        foreach (Comunes.Estructuras.AsientoSalaCine vItem in vAsientos)
+                        {
+                            vAsiento = new ListViewItem();
+                            vAsiento.ImageIndex = 3;
+                            vAsiento.Tag = vItem;
+                            ltvAsientos.Items.Add(vAsiento);
+                        }
+
                         lblId.Visible = true;
                         lblIdentificador.Visible = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Favor seleccionar un registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                   
                 }
                 catch (Exception ex)
                 {
@@ -180,12 +189,13 @@ namespace Interfaz.Mantenimientos
 
         private void btnAsignarAsiento_Click(object sender, EventArgs e)
         {
+            Comunes.Estructuras.AsientoSalaCine vEstructura = new Comunes.Estructuras.AsientoSalaCine();
             ListViewItem vItem = new ListViewItem();
             try
             {
                 vItem.ImageIndex = 0;
+                vItem.Tag = vEstructura;
                 ltvAsientos.Items.Add(vItem);
-
             }
             catch (Exception ex)
             {
@@ -195,7 +205,19 @@ namespace Interfaz.Mantenimientos
 
         private void ltvAsientos_DoubleClick(object sender, EventArgs e)
         {
-
+            Interfaz.Mantenimientos.mAsientos vMantenimientoAsientos = new Interfaz.Mantenimientos.mAsientos();
+            try
+            {
+                vMantenimientoAsientos.Estructura = (Comunes.Estructuras.AsientoSalaCine)ltvAsientos.SelectedItems[0].Tag;
+                vMantenimientoAsientos.StartPosition = FormStartPosition.CenterScreen;
+                vMantenimientoAsientos.ShowDialog();
+                ltvAsientos.SelectedItems[0].Tag = vMantenimientoAsientos.Estructura;
+                ltvAsientos.SelectedItems[0].ImageIndex = 3;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -232,10 +254,6 @@ namespace Interfaz.Mantenimientos
             }
         }
 
-
-        #endregion
-
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -251,12 +269,47 @@ namespace Interfaz.Mantenimientos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (ltvInformacion.SelectedIndices.Count > 0)
+                {
+                    OcultarTab();
+                    vModo = "M";
+                    Leer();
+                }
+                else
+                {
+                    MessageBox.Show("Favor seleccionar un registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (ltvInformacion.SelectedIndices.Count > 0)
+                {
+                    OcultarTab();
+                    vModo = "E";
+                    Leer();
+                    gboDescripcion.Enabled = false;
+                    gboSala.Enabled = false;
+                    btnAsignarAsiento.Enabled = false;
+                }
+                else
+                {
+                MessageBox.Show("Favor seleccionar un registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -273,55 +326,82 @@ namespace Interfaz.Mantenimientos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Comunes.Estructuras.TipoUsuario vEstructura = new Comunes.Estructuras.TipoUsuario();
-            Negocio.Clases.TipoUsuario vNegocio = new Negocio.Clases.TipoUsuario();
+            Comunes.Estructuras.SalaCine vEstructuraSalaCine = new Comunes.Estructuras.SalaCine();
+            Comunes.Estructuras.AsientoSalaCine vEstructuraAsientos = new Comunes.Estructuras.AsientoSalaCine();
+            Negocio.Clases.SalaCine vNegocio = new Negocio.Clases.SalaCine();
+            Negocio.Clases.AsientoSalaCine vNegocioAsientos = new Negocio.Clases.AsientoSalaCine();
             List<Comunes.Filtros.Filtro> vFiltros = new List<Comunes.Filtros.Filtro>();
+            List<Comunes.Estructuras.AsientoSalaCine> vAsientos = new List<Comunes.Estructuras.AsientoSalaCine>();
+            int vContador = 0;
             try
             {
-                //if (txtDescripcion.Text.Trim() != string.Empty)
-                //{
+                if (txtPrecioEntrada.Text.Trim() == String.Empty)
+                {
+                    MessageBox.Show("El campo Precio Entrada no puede contener un valor no válido, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                //    vEstructura.DescripcionTipoUsuario = txtDescripcion.Text;
-                //    switch (vModo)
-                //    {
-                //        case "A":
-                //            vEstructura.IdTipoUsuario = 0;
-                //            vNegocio.Insertar(vEstructura);
-                //            break;
-                //        case "M":
-                //            vEstructura.IdTipoUsuario = Convert.ToInt32(lblId.Text);
-                //            vFiltros.Add(new Comunes.Filtros.Filtro("IdTipoUsuario", "=", Convert.ToInt32(lblId.Text)));
-                //            vNegocio.Actualizar(vEstructura, vFiltros);
-                //            tbpLista.Parent = tbcInformacion;
-                //            tbcInformacion.SelectedTab = tbpLista;
-                //            tspBarraMenu.Visible = true;
-                //            tbpInformacion.Parent = null;
-                //            vModo = string.Empty;
-                //            CargarVista();
-                //            break;
+                if (ltvAsientos.Items.Count == 0)
+                {
+                    MessageBox.Show("Debe ingresar al menos un asiento, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                //        default:
-                //            vFiltros.Add(new Comunes.Filtros.Filtro("IdTipoUsuario", "=", Convert.ToInt32(lblId.Text)));
-                //            vNegocio.Eliminar(vFiltros);
-                //            tbpLista.Parent = tbcInformacion;
-                //            tbcInformacion.SelectedTab = tbpLista;
-                //            tspBarraMenu.Visible = true;
-                //            tbpInformacion.Parent = null;
-                //            vModo = string.Empty;
-                //            CargarVista();
-                //            //txtDescripcion.Enabled = true;
-                //            break;
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("El campo descripción no puede contener un valor no valido, por favor verifique", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
+                vEstructuraSalaCine.IdTipoSala = Convert.ToInt32(cboTipoSala.SelectedValue.ToString());
+                vEstructuraSalaCine.IdTipoProyeccion = Convert.ToInt32(cboTipoProyeccion.SelectedValue.ToString());
+                vEstructuraSalaCine.IdEstadoSala = Convert.ToInt32(cboEstadoSala.SelectedValue.ToString());
+                vEstructuraSalaCine.CantidadAsientos = ltvAsientos.Items.Count;
+                vEstructuraSalaCine.PrecioEntrada = Convert.ToDecimal(txtPrecioEntrada.Text);
 
-                //MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //CargarVista();
-                ////txtDescripcion.Text = string.Empty;
-                //lblId.Text = string.Empty;
+                foreach (ListViewItem vItem in ltvAsientos.Items)
+                {
+                    vContador += 1;
+                    vEstructuraAsientos = (Comunes.Estructuras.AsientoSalaCine)vItem.Tag;
+                    vEstructuraAsientos.IdNumeroAsiento = vContador;
+                    vEstructuraAsientos.IdSala = Convert.ToInt32(lblId.Text);
+                    vAsientos.Add(vEstructuraAsientos);
+                }
+
+
+                switch (vModo)
+                {
+                    case "A":
+                        vEstructuraSalaCine.IdSala = 0;
+                        vNegocio.Insertar(vEstructuraSalaCine, vAsientos);
+                        break;
+                    case "M":
+                        vEstructuraSalaCine.IdSala = Convert.ToInt32(lblId.Text);
+                        vFiltros.Add(new Comunes.Filtros.Filtro("IdSala", "=", Convert.ToInt32(lblId.Text)));
+                        vNegocio.Actualizar(vEstructuraSalaCine, vFiltros, vAsientos);
+                        tbpLista.Parent = tbcInformacion;
+                        tbcInformacion.SelectedTab = tbpLista;
+                        tspBarraMenu.Visible = true;
+                        tbpInformacion.Parent = null;
+                        vModo = string.Empty;
+                        CargarVista();
+                        break;
+
+                    default:
+                        vFiltros.Add(new Comunes.Filtros.Filtro("IdSala", "=", Convert.ToInt32(lblId.Text)));
+                        vNegocio.Eliminar(vFiltros);
+                        vNegocioAsientos.Eliminar(vFiltros);
+                        tbpLista.Parent = tbcInformacion;
+                        tbcInformacion.SelectedTab = tbpLista;
+                        tspBarraMenu.Visible = true;
+                        tbpInformacion.Parent = null;
+                        vModo = string.Empty;
+                        CargarVista();
+                        gboDescripcion.Enabled = true;
+                        gboSala.Enabled = true;
+                        btnAsignarAsiento.Enabled = true;
+                        break;
+                }
+
+                MessageBox.Show("El proceso a finalizado con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarVista();
+                ltvAsientos.Items.Clear();
+                lblId.Text = string.Empty;
+                txtPrecioEntrada.Text = "0.00";
             }
             catch (Exception ex)
             {
@@ -351,7 +431,7 @@ namespace Interfaz.Mantenimientos
         {
             try
             {
-                tbpInformacion.Parent =  tbcInformacion;
+                tbpInformacion.Parent = tbcInformacion;
                 tbcInformacion.SelectedTab = tbpInformacion;
                 tbpAsientos.Parent = null;
             }
@@ -360,5 +440,10 @@ namespace Interfaz.Mantenimientos
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        #endregion
+
+
+
     }
 }
